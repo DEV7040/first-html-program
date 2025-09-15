@@ -17,7 +17,6 @@
       --stroke:#22304c;       /* borders */
       --chip:#101728;         /* chips/bg */
     }
-
     *{box-sizing:border-box}
     html,body{height:100%}
     body{
@@ -27,9 +26,7 @@
       color:var(--ink);
       line-height:1.6;
     }
-
     .wrap{max-width:1100px;margin-inline:auto;padding:24px}
-
     header{
       position:sticky; top:0; z-index:10;
       background:rgba(11,18,32,.8); backdrop-filter: blur(10px);
@@ -39,22 +36,78 @@
     .logo{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--brand),var(--brand-2));
       box-shadow:0 6px 20px rgba(90,168,255,.35)}
     .brand h1{font-size:1.05rem;margin:0;letter-spacing:.3px}
-
     nav.toc{border:1px solid var(--stroke);border-radius:16px;padding:12px;background:linear-gradient(180deg, #0d1627, #0a1423)}
     nav.toc .group{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:8px}
     nav.toc a{display:block;padding:10px 12px;border:1px solid var(--stroke);border-radius:12px;text-decoration:none;color:var(--ink);
       background:var(--chip);transition:transform .08s ease, border-color .2s ease}
     nav.toc a:hover{transform:translateY(-1px);border-color:var(--brand)}
 
+    /* Filter bar */
+    .filters{
+      margin-top:12px;
+      border:1px solid var(--stroke);
+      border-radius:16px;
+      padding:12px;
+      background:linear-gradient(180deg,#0d1627,#0a1423);
+    }
+    .filters .grid{
+      display:grid;
+      grid-template-columns:repeat(12,1fr);
+      gap:10px;
+    }
+    .filters fieldset{
+      grid-column:span 12;
+      margin:0;
+      border:1px solid var(--stroke);
+      border-radius:12px;
+      padding:10px 12px;
+      background:var(--chip);
+      min-inline-size: 0;
+    }
+    @media (min-width:720px){ .filters fieldset{ grid-column:span 6 } }
+    @media (min-width:1024px){ .filters fieldset{ grid-column:span 4 } }
+    .filters legend{
+      font-size:.9rem;
+      color:var(--muted);
+      padding:0 6px;
+    }
+    .filters label{
+      display:inline-flex;
+      align-items:center;
+      gap:.4rem;
+      margin-right:10px;
+      margin-top:6px;
+      font-size:.95rem;
+    }
+    .filters input[type="number"],
+    .filters select{
+      width:100%;
+      padding:.4rem .55rem;
+      border-radius:10px;
+      border:1px solid var(--stroke);
+      background:linear-gradient(180deg,#0d1627,#0a1423);
+      color:var(--ink);
+    }
+    .filters .row{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:8px;
+      margin-top:6px;
+    }
+    .filters .actions{
+      display:flex;gap:10px;flex-wrap:wrap;margin-top:10px;
+    }
+    .btn{display:inline-block;padding:.5rem .7rem;border-radius:10px;border:1px solid var(--stroke);text-decoration:none;color:var(--ink);
+      background:linear-gradient(180deg,#0d1627,#0a1423)}
+    .btn:hover{border-color:var(--brand)}
+
     .section{margin-top:28px}
     .section h2{margin:0 0 10px;font-size:1.25rem}
     .section .note{color:var(--muted);font-size:.95rem;margin-bottom:12px}
-
     .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:14px}
     .card{grid-column:span 12;border:1px solid var(--stroke);border-radius:18px;padding:16px;background:var(--panel)}
     @media (min-width:720px){.card{grid-column:span 6}}
     @media (min-width:1024px){.card{grid-column:span 4}}
-
     .card h3{margin:0 0 6px;font-size:1.05rem}
     .pill{display:inline-flex;gap:.35rem;align-items:center;background:var(--chip);border:1px solid var(--stroke);color:var(--muted);
       font-size:.76rem;padding:.25rem .55rem;border-radius:999px}
@@ -62,12 +115,8 @@
     .card dl{margin:0}
     .card dt{color:var(--muted);font-weight:600}
     .card dd{margin:0 0 8px}
-
     .links{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
-    .btn{display:inline-block;padding:.5rem .7rem;border-radius:10px;border:1px solid var(--stroke);text-decoration:none;color:var(--ink);
-      background:linear-gradient(180deg,#0d1627,#0a1423)}
     .btn:hover{border-color:var(--brand)}
-
     footer{margin:40px 0 20px;color:var(--muted);font-size:.9rem;border-top:1px dashed var(--stroke);padding-top:16px}
     .kbd{font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size:.85em; background:#0a1220;
       border:1px solid var(--stroke); border-radius:6px; padding:2px 6px}
@@ -92,11 +141,79 @@
           <a href="#sec-h">H. Women Welfare</a>
         </div>
       </nav>
+
+      <!-- Filters -->
+      <form class="filters" method="get" action="">
+        <div class="grid">
+          <!-- Age -->
+          <fieldset>
+            <legend>Age</legend>
+            <div class="row">
+              <label for="age_min">From
+                <input id="age_min" name="age_min" type="number" min="0" step="1" />
+              </label>
+              <label for="age_max">To
+                <input id="age_max" name="age_max" type="number" min="0" step="1" />
+              </label>
+            </div>
+          </fieldset>
+
+          <!-- Gender -->
+          <fieldset>
+            <legend>Gender</legend>
+            <label for="gender" class="sr-only">Select gender</label>
+            <select id="gender" name="gender">
+              <option value="">Any</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="other">Other</option>
+              <option value="na">Prefer not to say</option>
+            </select>
+          </fieldset>
+
+          <!-- Employment -->
+          <fieldset>
+            <legend>Employment</legend>
+            <label><input type="radio" name="employment" value="" checked> Any</label>
+            <label><input type="radio" name="employment" value="employed"> Employed</label>
+            <label><input type="radio" name="employment" value="unemployed"> Unemployed</label>
+          </fieldset>
+
+          <!-- Marital status -->
+          <fieldset>
+            <legend>Marital status</legend>
+            <label><input type="radio" name="marital" value="" checked> Any</label>
+            <label><input type="radio" name="marital" value="married"> Married</label>
+            <label><input type="radio" name="marital" value="unmarried"> Unmarried</label>
+          </fieldset>
+
+          <!-- Education -->
+          <fieldset>
+            <legend>Education</legend>
+            <label><input type="radio" name="education" value="" checked> Any</label>
+            <label><input type="radio" name="education" value="school"> School</label>
+            <label><input type="radio" name="education" value="college"> College</label>
+          </fieldset>
+
+          <!-- Disability -->
+          <fieldset>
+            <legend>Disability</legend>
+            <label><input type="radio" name="disability" value="" checked> Any</label>
+            <label><input type="radio" name="disability" value="disabled"> Disabled</label>
+            <label><input type="radio" name="disability" value="non-disabled"> Not disabled</label>
+          </fieldset>
+        </div>
+
+        <div class="actions">
+          <button class="btn" type="submit">Apply filters</button>
+          <button class="btn" type="reset">Reset</button>
+        </div>
+      </form>
+      <!-- /Filters -->
     </div>
   </header>
 
   <main class="wrap">
-
     <!-- A. Agriculture & Farmer Welfare (Maharashtra) -->
     <section id="sec-a" class="section">
       <h2>A. Agriculture & Farmer Welfare Schemes in Maharashtra (2025)</h2>
@@ -215,7 +332,6 @@
       </div>
       <p class="note">For district portals, status tracking, or helplines: <a class="btn" href="https://mahadbt.maharashtra.gov.in" target="_blank" rel="noopener">MahaDBT Portal</a> &nbsp; <a class="btn" href="http://myscheme.gov.in" target="_blank" rel="noopener">MyScheme</a></p>
     </section>
-
     <!-- B. Education (Maharashtra) -->
     <section id="sec-b" class="section">
       <h2>B. Government Educational Schemes in Maharashtra</h2>
@@ -252,7 +368,6 @@
         </article>
       </div>
     </section>
-
     <!-- C. Social Welfare -->
     <section id="sec-c" class="section">
       <h2>C. Social Welfare Schemes (SC/ST, OBCs, Minorities, Differently Abled)</h2>
@@ -289,7 +404,6 @@
         </article>
       </div>
     </section>
-
     <!-- D. Energy & Environment -->
     <section id="sec-d" class="section">
       <h2>D. Energy & Environment Schemes</h2>
@@ -320,7 +434,6 @@
         </article>
       </div>
     </section>
-
     <!-- E. Health & Nutrition -->
     <section id="sec-e" class="section">
       <h2>E. Health & Nutrition Schemes</h2>
@@ -331,207 +444,4 @@
               <dt>Documents</dt><dd>Aadhaar, ration card, hospital referral, income certificate.</dd></dl>
           <div class="links"><a class="btn" href="http://jeevandayee.gov.in" target="_blank" rel="noopener">jeevandayee.gov.in</a></div>
         </article>
-        <article class="card"><h3>2) Ayushman Bharat Yojana (PM‑JAY)</h3>
-          <dl><dt>Eligibility</dt><dd>BPL families across India based on SECC data; name should appear in SECC 2011.</dd>
-              <dt>Benefits</dt><dd>Health insurance cover of ₹5 lakh/year/family for secondary & tertiary hospitalization.</dd>
-              <dt>Documents</dt><dd>Aadhaar, ration card, PM‑JAY card (if available), SECC ID.</dd></dl>
-          <div class="links"><a class="btn" href="http://pmjay.gov.in" target="_blank" rel="noopener">pmjay.gov.in</a></div>
-        </article>
-        <article class="card"><h3>3) Bal Sanjeevani (Child Nutrition)</h3>
-          <dl><dt>Eligibility</dt><dd>Malnourished children under 6 years identified by Anganwadi/PHC.</dd>
-              <dt>Benefits</dt><dd>Free nutritional kits, regular health checkups, supplements, referrals.</dd>
-              <dt>Documents</dt><dd>Child health card, Anganwadi/PHC certificate, Aadhaar (if available).</dd></dl>
-        </article>
-        <article class="card"><h3>4) Janani Suraksha Yojana (JSY)</h3>
-          <dl><dt>Eligibility</dt><dd>Pregnant women (esp. rural SC/ST, BPL).</dd>
-              <dt>Benefits</dt><dd>₹700–₹1,400 financial aid for institutional delivery & transport.</dd>
-              <dt>Documents</dt><dd>Aadhaar, delivery record, BPL card, Mother & Child Health card.</dd></dl>
-          <div class="links"><a class="btn" href="http://nhm.gov.in" target="_blank" rel="noopener">nhm.gov.in</a></div>
-        </article>
-        <article class="card"><h3>5) TB Control, HIV/AIDS & Disability Care</h3>
-          <dl><dt>Eligibility</dt><dd>TB patients, HIV+ individuals, Persons with Disabilities (as per govt diagnosis); BPL or medically eligible.</dd>
-              <dt>Benefits</dt><dd>Free diagnosis, treatment, antiretrovirals, counseling, disability aids, nutritional support.</dd>
-              <dt>Documents</dt><dd>Aadhaar, medical certificate, income proof (for BPL), disability ID (if applicable).</dd></dl>
-          <div class="links"><a class="btn" href="http://nhm.gov.in" target="_blank" rel="noopener">nhm.gov.in</a></div>
-        </article>
-      </div>
-    </section>
-
-    <!-- F. Housing -->
-    <section id="sec-f" class="section">
-      <h2>F. Housing Schemes in India</h2>
-      <div class="grid">
-        <article class="card"><h3>1) Pradhan Mantri Awas Yojana – Urban (PMAY‑U)</h3>
-          <dl><dt>Eligibility</dt><dd>Urban poor (EWS, LIG, MIG‑I & II), slum dwellers; first‑time homebuyer; no pucca house.</dd>
-              <dt>Benefits</dt><dd>Interest subsidy on home loans (up to ~₹2.67 lakh), financial aid for construction.</dd>
-              <dt>Documents</dt><dd>Aadhaar, income proof, property papers, bank details, self‑declaration of not owning a house.</dd></dl>
-          <div class="links"><a class="btn" href="http://pmaymis.gov.in" target="_blank" rel="noopener">pmaymis.gov.in</a></div>
-        </article>
-        <article class="card"><h3>2) Pradhan Mantri Awas Yojana – Gramin (PMAY‑G)</h3>
-          <dl><dt>Eligibility</dt><dd>Rural poor households; name must appear in SECC 2011; priority to SC/ST, women‑headed households.</dd>
-              <dt>Benefits</dt><dd>₹1.2–₹1.3 lakh grant for house construction with basic amenities.</dd>
-              <dt>Documents</dt><dd>Aadhaar, SECC proof, bank account, MGNREGA job card (if any), caste certificate (if SC/ST).</dd></dl>
-          <div class="links"><a class="btn" href="http://pmayg.nic.in" target="_blank" rel="noopener">pmayg.nic.in</a></div>
-        </article>
-        <article class="card"><h3>3) MHADA Lottery Scheme (Maharashtra)</h3>
-          <dl><dt>Eligibility</dt><dd>Resident of Maharashtra, 18+; income‑based categories (EWS/LIG/MIG/HIG).</dd>
-              <dt>Benefits</dt><dd>Affordable housing via lottery in cities like Mumbai, Pune, etc.</dd>
-              <dt>Documents</dt><dd>Aadhaar, PAN, income certificate, domicile proof, bank details.</dd></dl>
-          <div class="links"><a class="btn" href="http://mhada.gov.in" target="_blank" rel="noopener">mhada.gov.in</a></div>
-        </article>
-        <article class="card"><h3>4) Slum Rehabilitation Scheme (SRA)</h3>
-          <dl><dt>Eligibility</dt><dd>Slum dwellers (mainly Mumbai); residence prior to cut‑off date (as notified).</dd>
-              <dt>Benefits</dt><dd>Free pucca housing unit in same locality with better facilities.</dd>
-              <dt>Documents</dt><dd>Aadhaar, slum residence proof, biometric survey details, domicile certificate.</dd></dl>
-          <div class="links"><a class="btn" href="http://sra.gov.in" target="_blank" rel="noopener">sra.gov.in</a></div>
-        </article>
-        <article class="card"><h3>5) Affordable Rental Housing Complexes (ARHC)</h3>
-          <dl><dt>Eligibility</dt><dd>Urban migrants, poor workers, students, laborers.</dd>
-              <dt>Benefits</dt><dd>Safe, affordable rental housing near employment zones.</dd>
-              <dt>Documents</dt><dd>Aadhaar, employment proof (if available), rental agreement.</dd></dl>
-          <div class="links"><a class="btn" href="http://pmaymis.gov.in" target="_blank" rel="noopener">pmaymis.gov.in</a></div>
-        </article>
-      </div>
-    </section>
-
-    <!-- G. Employment & Skill Development -->
-    <section id="sec-g" class="section">
-      <h2>G. Employment & Skill Development Schemes (India)</h2>
-      <div class="grid">
-        <article class="card"><h3>1) Pradhan Mantri Kaushal Vikas Yojana (PMKVY 4.0)</h3>
-          <dl><dt>Eligibility</dt><dd>Youth across India.</dd>
-              <dt>Benefits</dt><dd>Free skill training; monetary rewards; recognition of prior learning.</dd>
-              <dt>Documents</dt><dd>ID proof, educational certificate, photographs.</dd></dl>
-          <div class="links"><a class="btn" href="https://pmkvyofficial.org" target="_blank" rel="noopener">pmkvyofficial.org</a></div>
-        </article>
-        <article class="card"><h3>2) Deen Dayal Upadhyaya Grameen Kaushalya Yojana (DDU‑GKY)</h3>
-          <dl><dt>Eligibility</dt><dd>Rural youth 15–35 from poor households.</dd>
-              <dt>Benefits</dt><dd>Skill training with job placement under NRLM; digital vouchers for payments.</dd>
-              <dt>Documents</dt><dd>ID, income & residence proof, bank details.</dd></dl>
-          <div class="links"><a class="btn" href="https://ddugky.gov.in" target="_blank" rel="noopener">ddugky.gov.in</a></div>
-        </article>
-        <article class="card"><h3>3) DAY‑NULM (Urban) & DDU‑GKY (Rural)</h3>
-          <dl><dt>Eligibility</dt><dd>Urban & rural poor individuals.</dd>
-              <dt>Benefits</dt><dd>Skill training, self‑employment support, micro‑finance, SHG promotion.</dd>
-              <dt>Documents</dt><dd>Income proof, residence proof, ID, bank details.</dd></dl>
-          <div class="links"><a class="btn" href="https://aajeevika.gov.in" target="_blank" rel="noopener">aajeevika.gov.in</a></div>
-        </article>
-        <article class="card"><h3>4) Prime Minister’s Employment Generation Programme (PMEGP)</h3>
-          <dl><dt>Eligibility</dt><dd>Traditional artisans, unemployed youth, rural & urban individuals.</dd>
-              <dt>Benefits</dt><dd>Margin subsidies on business loans—up to 25% (rural) or 15% (urban); higher for SC/ST/OBC/minorities/women.</dd>
-              <dt>Documents</dt><dd>Project report, ID & residence proof, bank documents.</dd></dl>
-          <div class="links"><a class="btn" href="https://kviconline.gov.in" target="_blank" rel="noopener">kviconline.gov.in</a></div>
-        </article>
-        <article class="card"><h3>5) Stand‑Up India</h3>
-          <dl><dt>Eligibility</dt><dd>SC/ST and women entrepreneurs.</dd>
-              <dt>Benefits</dt><dd>Bank loans ₹10 lakh–₹1 crore for greenfield enterprises.</dd>
-              <dt>Documents</dt><dd>Business plan, ID/KYC, caste certificate, income certificate.</dd></dl>
-          <div class="links"><a class="btn" href="https://standupmitra.in" target="_blank" rel="noopener">standupmitra.in</a></div>
-        </article>
-        <article class="card"><h3>6) Assistance to Skill Development of OBCs/DNTs/EBCs</h3>
-          <dl><dt>Eligibility</dt><dd>OBCs, Denotified Tribes (DNTs), Economically Backward Classes (EBCs).</dd>
-              <dt>Benefits</dt><dd>Skill development for income‑generating activities through partnerships.</dd>
-              <dt>Documents</dt><dd>Community certificate, ID proof, income proof.</dd></dl>
-          <div class="links"><a class="btn" href="https://www.india.gov.in" target="_blank" rel="noopener">india.gov.in</a></div>
-        </article>
-        <article class="card"><h3>7) Learn and Earn – Skill Development for Minorities</h3>
-          <dl><dt>Eligibility</dt><dd>Minority community members.</dd>
-              <dt>Benefits</dt><dd>Skill training in traditional trades with placement support.</dd>
-              <dt>Documents</dt><dd>Minority certificate, ID, educational/training details.</dd></dl>
-          <div class="links"><a class="btn" href="https://www.india.gov.in" target="_blank" rel="noopener">india.gov.in</a></div>
-        </article>
-        <article class="card"><h3>8) Nai Manzil</h3>
-          <dl><dt>Eligibility</dt><dd>Minority youth without formal school certificates.</dd>
-              <dt>Benefits</dt><dd>Integrated formal education plus vocational training.</dd>
-              <dt>Documents</dt><dd>Identity proof, minority certificate.</dd></dl>
-          <div class="links"><a class="btn" href="https://www.india.gov.in" target="_blank" rel="noopener">india.gov.in</a></div>
-        </article>
-        <article class="card"><h3>9) USTTAD – Upgrading Skills & Training in Traditional Arts/Crafts</h3>
-          <dl><dt>Eligibility</dt><dd>Minority artisans & craftsmen.</dd>
-              <dt>Benefits</dt><dd>Training in traditional arts/crafts to enhance livelihood opportunities.</dd>
-              <dt>Documents</dt><dd>Artisan proof, ID, community proof.</dd></dl>
-          <div class="links"><a class="btn" href="https://www.myscheme.gov.in" target="_blank" rel="noopener">myscheme.gov.in</a></div>
-        </article>
-        <article class="card"><h3>10) Employment‑Linked Incentive (ELI) Scheme</h3>
-          <dl><dt>Eligibility</dt><dd>Employers and first‑time job seekers.</dd>
-              <dt>Benefits</dt><dd>₹15,000 subsidy for job‑seekers; ₹3,000/month per new employee for six months for employers.</dd>
-              <dt>Documents</dt><dd>Job/offer letters, employee details.</dd></dl>
-        </article>
-      </div>
-    </section>
-
-    <!-- H. Women Welfare -->
-    <section id="sec-h" class="section">
-      <h2>H. Women Welfare Schemes (India)</h2>
-      <div class="grid">
-        <article class="card"><h3>1) Pradhan Mantri Matru Vandana Yojana (PMMVY)</h3>
-          <dl><dt>Eligibility</dt><dd>Pregnant & lactating women (19+) for first live birth.</dd>
-              <dt>Benefits</dt><dd>₹6,000 conditional cash transfer in installments for wage loss, nutrition, healthcare.</dd>
-              <dt>Documents</dt><dd>Identity proof, pregnancy registration, bank details.</dd></dl>
-          <div class="links"><span class="pill">PMMVY Portal</span></div>
-        </article>
-        <article class="card"><h3>2) Beti Bachao Beti Padhao (BBBP)</h3>
-          <dl><dt>Eligibility</dt><dd>All citizens; focus on girl child survival, education, empowerment.</dd>
-              <dt>Benefits</dt><dd>Awareness campaigns & institutional support to improve child sex ratio & education.</dd>
-              <dt>Documents</dt><dd>NA (awareness programme).</dd></dl>
-          <div class="links"><span class="pill">BBBP</span></div>
-        </article>
-        <article class="card"><h3>3) Mahila Shakti Kendra (MSK)</h3>
-          <dl><dt>Eligibility</dt><dd>Rural women.</dd>
-              <dt>Benefits</dt><dd>Training, counseling, information & linkage to government services.</dd>
-              <dt>Documents</dt><dd>ID & address proof.</dd></dl>
-          <div class="links"><span class="pill">MWCD</span></div>
-        </article>
-        <article class="card"><h3>4) Indira Gandhi National Widow Pension Scheme</h3>
-          <dl><dt>Eligibility</dt><dd>Widows from BPL households aged 40–79 years.</dd>
-              <dt>Benefits</dt><dd>₹300/month pension; ₹500 after age 80.</dd>
-              <dt>Documents</dt><dd>Widowhood proof, BPL certificate, ID & address proof.</dd></dl>
-          <div class="links"><span class="pill">NSAP</span></div>
-        </article>
-        <article class="card"><h3>5) Swadhar Greh</h3>
-          <dl><dt>Eligibility</dt><dd>Women in difficult circumstances (trafficking victims, destitute, etc.).</dd>
-              <dt>Benefits</dt><dd>Shelter, food, clothing, health & legal support, vocational training.</dd>
-              <dt>Documents</dt><dd>ID proof, referral from NGO/authority.</dd></dl>
-          <div class="links"><span class="pill">MWCD – Swadhar</span></div>
-        </article>
-        <article class="card"><h3>6) Stand‑Up India (Women)</h3>
-          <dl><dt>Eligibility</dt><dd>Women (and SC/ST) entrepreneurs establishing non‑farm enterprises.</dd>
-              <dt>Benefits</dt><dd>Bank loans ₹10 lakh–₹1 crore.</dd>
-              <dt>Documents</dt><dd>Business plan, ID, address proof, registration docs.</dd></dl>
-          <div class="links"><a class="btn" href="https://standupmitra.in" target="_blank" rel="noopener">standupmitra.in</a></div>
-        </article>
-        <article class="card"><h3>7) Subhadra Yojana (Odisha)</h3>
-          <dl><dt>Eligibility</dt><dd>Women 21–60 from EWS; excludes govt employees & taxpayers.</dd>
-              <dt>Benefits</dt><dd>₹50,000 over 5 years via Aadhaar‑linked bank account.</dd>
-              <dt>Documents</dt><dd>ID proof, Aadhaar, bank details, income proof.</dd></dl>
-          <div class="links"><span class="pill">Odisha Govt Portal</span></div>
-        </article>
-        <article class="card"><h3>8) Kanyashree Prakalpa (West Bengal)</h3>
-          <dl><dt>Eligibility</dt><dd>Unmarried girls 13–18; family income ≤ ₹1.2 lakh (relaxed for special cases).</dd>
-              <dt>Benefits</dt><dd>₹1,000 annual scholarship; ₹25,000 one‑time grant at 18.</dd>
-              <dt>Documents</dt><dd>ID, age certificate, school enrollment, income certificate.</dd></dl>
-          <div class="links"><span class="pill">Kanyashree</span></div>
-        </article>
-        <article class="card"><h3>9) Kishori Shakti Yojana</h3>
-          <dl><dt>Eligibility</dt><dd>Adolescent girls 11–18 under ICDS.</dd>
-              <dt>Benefits</dt><dd>Education, vocational training, health awareness.</dd>
-              <dt>Documents</dt><dd>Birth certificate, ID, school enrollment proof.</dd></dl>
-          <div class="links"><span class="pill">MWCD</span></div>
-        </article>
-        <article class="card"><h3>10) MKSP & Janani Suraksha Yojana (JSY)</h3>
-          <dl><dt>Eligibility</dt><dd>Women farmers (MKSP); pregnant women (JSY, esp. BPL).</dd>
-              <dt>Benefits</dt><dd>MKSP: technical training & livelihood support. JSY: cash assistance for institutional delivery.</dd>
-              <dt>Documents</dt><dd>ID, land/farming proof (MKSP); healthcare records (JSY).</dd></dl>
-          <div class="links"><span class="pill">MKSP | JSY</span></div>
-        </article>
-      </div>
-    </section>
-
-    <footer>
-      <p>Note: This page compiles schemes with brief descriptors (eligibility, benefits, documents) and links to official portals where listed. For latest updates or district‑level portals, see <a href="https://mahadbt.maharashtra.gov.in" target="_blank" rel="noopener">MahaDBT</a> or <a href="http://myscheme.gov.in" target="_blank" rel="noopener">MyScheme</a>.</p>
-      <p>Tip: Use browser search (<span class="kbd">Ctrl</span>+<span class="kbd">F</span> / <span class="kbd">Cmd</span>+<span class="kbd">F</span>) to find a scheme quickly.</p>
-    </footer>
-  </main>
-</body>
-</html>
-
+        <article class="card"><h3>2) Ayushman Bharat Y
