@@ -1,1292 +1,719 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1, viewport-fit=cover"
-  />
-  <title>Maharashtra & India Schemes – 2025</title>
-  <meta name="description" content="Searchable directory of Maharashtra and India government schemes based on the provided document." />
-  <style>
-    /* Base (fallback) */
-    :root{
-      --bg:#0b1020;
-      --card:#111831;
-      --card-2:#0e152c;
-      --text:#0d1530;
-      --muted:#41507a;
-      --accent:#1f65ff;
-      --accent-2:#0aa06e;
-      --chip:#e8edff;
-      --danger:#d93030;
-      --ok:#148d53;
-      --warning:#b36b00;
-      --border:#d7def1;
-      --shadow:0 8px 24px rgba(0,0,0,.10);
-      --radius:14px;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Government Schemes Portal - Complete Guide 2025</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    /* Dark (as before) */
-    [data-theme="dark"]{
-      --bg:#0b1020;
-      --card:#111831;
-      --card-2:#0e152c;
-      --text:#ecf0ff;
-      --muted:#b7c0e0;
-      --accent:#6ea8fe;
-      --accent-2:#70e1a1;
-      --chip:#1b2547;
-      --danger:#ff7b7b;
-      --ok:#7dffa3;
-      --warning:#ffd37d;
-      --border:#243055;
-      --shadow:0 8px 24px rgba(0,0,0,.35);
-    }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #7e22ce 100%);
+            min-height: 100vh;
+        }
 
-    /* Light (neutral) */
-    [data-theme="light"]{
-      --bg:#f6f8ff;
-      --card:#ffffff;
-      --card-2:#f7f9ff;
-      --text:#0d1530;
-      --muted:#41507a;
-      --accent:#1f65ff;
-      --accent-2:#0aa06e;
-      --chip:#eef3ff;
-      --danger:#d93030;
-      --ok:#148d53;
-      --warning:#b36b00;
-      --border:#dbe3f5;
-      --shadow:0 8px 24px rgba(0,20,60,.08);
-    }
+        header {
+            background: linear-gradient(135deg, rgba(30, 60, 114, 0.95) 0%, rgba(126, 34, 206, 0.95) 100%);
+            padding: 2rem 0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
 
-    /* NEW White theme (bright, minimal) */
-    [data-theme="white"]{
-      --bg:#ffffff;         /* page background */
-      --card:#ffffff;       /* card surface */
-      --card-2:#ffffff;     /* modal/secondary surface */
-      --text:#0b1225;       /* strong body text */
-      --muted:#3c4a6e;      /* secondary text */
-      --accent:#0b57d0;     /* blue accent */
-      --accent-2:#0aa06e;   /* secondary accent */
-      --chip:#f3f6ff;       /* chip/button background */
-      --danger:#c62828;     /* error */
-      --ok:#1b8e5a;         /* success */
-      --warning:#b36b00;    /* warning */
-      --border:#e7ecf5;     /* light borders */
-      --shadow:0 10px 28px rgba(7,20,60,.06);
-    }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
-    /* High‑Contrast */
-    [data-theme="contrast"]{
-      --bg:#000000;
-      --card:#0f0f0f;
-      --card-2:#111111;
-      --text:#ffffff;
-      --muted:#e0e0e0;
-      --accent:#00c8ff;
-      --accent-2:#00ff7f;
-      --chip:#1a1a1a;
-      --danger:#ff3b3b;
-      --ok:#29ff9a;
-      --warning:#ffd23c;
-      --border:#2a2a2a;
-      --shadow:none;
-    }
+        .header-content {
+            text-align: center;
+            color: white;
+        }
 
-    /* Maharashtra palette */
-    [data-theme="maha"]{
-      --bg:#0e1324;
-      --card:#111a33;
-      --card-2:#0f1730;
-      --text:#eef3ff;
-      --muted:#bfc9e6;
-      --accent:#ff7a00;
-      --accent-2:#19a84a;
-      --chip:#1b2547;
-      --danger:#ff6b6b;
-      --ok:#4be07a;
-      --warning:#ffbf4d;
-      --border:#27325a;
-      --shadow:0 8px 24px rgba(0,0,0,.35);
-    }
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            animation: fadeInDown 0.8s ease;
+        }
 
-    /* Peacock theme */
-    [data-theme="peacock"]{
-      --bg:#0e1030;
-      --card:#141943;
-      --card-2:#10163a;
-      --text:#eef3ff;
-      --muted:#b9c4e8;
-      --accent:#1bd4b4;
-      --accent-2:#7aa6ff;
-      --chip:#1a2250;
-      --danger:#ff6b7d;
-      --ok:#4be07a;
-      --warning:#ffc56e;
-      --border:#273063;
-      --shadow:0 8px 24px rgba(0,0,0,.35);
-    }
+        .subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.95;
+        }
 
-    *{box-sizing:border-box}
-    html,body{
-      margin:0;height:100%;
-      background:var(--bg);
-      color:var(--text);
-      font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif
-    }
-    a{color:var(--accent);text-decoration:none}
-    header{
-      position:sticky;top:0;z-index:10;
-      backdrop-filter:saturate(1.4) blur(10px);
-      background:color-mix(in srgb, var(--bg) 85%, transparent);
-      border-bottom:1px solid var(--border);
-    }
-    .wrap{max-width:1100px;margin:0 auto;padding:18px 20px}
-    .title{display:flex;align-items:center;gap:14px}
-    .logo{
-      width:38px;height:38px;border-radius:10px;
-      background: radial-gradient(120% 120% at 20% 20%, #3858d6 0%, #1b2a57 40%, #121a35 100%);
-      box-shadow:inset 0 0 22px rgba(0,0,0,.06), var(--shadow);
-      display:grid;place-items:center;color:#dff; font-weight:800;letter-spacing:.5px
-    }
-    .title h1{font-size:18px;margin:0}
-    .subtitle{font-size:13px;color:var(--muted);margin:2px 0 0}
-    .bar{display:grid;grid-template-columns:1fr auto;gap:10px;margin-top:14px}
-    .search{
-      display:flex;gap:10px;align-items:center;background:var(--card);border:1px solid var(--border);
-      border-radius:12px;padding:10px 12px;box-shadow:var(--shadow)
-    }
-    .search input{
-      background:transparent;border:0;outline:0;color:var(--text);
-      width:100%;font-size:15px
-    }
-    .actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
-    button, .chip, .selectlike{
-      border:1px solid var(--border);background:var(--chip);color:var(--text);
-      border-radius:999px;padding:9px 12px;font-weight:600;cursor:pointer
-    }
-    .selectlike{display:flex;align-items:center;gap:8px;padding:8px 10px}
-    .selectlike select{
-      background:transparent;color:var(--text);border:0;outline:0;appearance:none
-    }
-    button.secondary{background:var(--card)}
-    .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
-    .chip.active{background:linear-gradient(180deg,#e8eefc,#d8e3fb);border-color:#c7d5fb;box-shadow:0 6px 18px rgba(49,81,165,.18)}
-    main .grid{
-      margin-top:20px;
-      display:grid;grid-template-columns:repeat(12,1fr);gap:14px
-    }
-    .card{
-      grid-column:span 12;background:var(--card);
-      border:1px solid var(--border);border-radius:var(--radius);padding:14px 14px 12px;box-shadow:var(--shadow)
-    }
-    @media(min-width:720px){ .card{grid-column:span 6} }
-    @media(min-width:1024px){ .card{grid-column:span 4} }
-    .tag{font-size:11px;color:#41507a;background:#ecf2ff;border:1px solid #cfe0ff;padding:4px 8px;border-radius:999px;margin-right:8px}
-    .name{margin:8px 0 4px;font-size:16px}
-    .meta{font-size:13px;color:var(--muted)}
-    .card .btns{display:flex;gap:8px;margin-top:10px}
-    .pill{font-size:12px;background:#effaf4;border:1px solid #bfe8cf;color:#146b3a;padding:6px 10px;border-radius:999px}
-    .view{background:var(--accent);color:#ffffff;border:0}
-    .hidden{display:none}
+        .stats-bar {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
 
-    /* Modal */
-    dialog{
-      width:min(860px,92vw);border:1px solid var(--border);
-      border-radius:16px;background:var(--card-2);
-      color:var(--text);box-shadow:0 30px 70px rgba(0,0,0,.18)
-    }
-    dialog::backdrop{background:rgba(3,5,12,.25);backdrop-filter:blur(3px)}
-    .modal-head{display:flex;justify-content:space-between;align-items:center;padding:16px;border-bottom:1px solid var(--border)}
-    .modal-head h3{margin:0;font-size:18px}
-    .modal-body{padding:16px}
-    .kvs{display:grid;grid-template-columns:1fr;gap:12px}
-    @media(min-width:720px){.kvs{grid-template-columns:1fr 1fr}}
-    .kv{background:var(--card-2);border:1px solid var(--border);border-radius:12px;padding:12px}
-    .kv h4{margin:0 0 8px;font-size:14px;color:#2a3870}
-    .kv p, .kv li{font-size:14px;color:#24325a;line-height:1.5}
-    .badge{display:inline-block;background:#eef4ff;border:1px solid #cfe0ff;color:#21305e;padding:6px 10px;border-radius:999px;font-size:12px}
-    .modal-foot{display:flex;justify-content:space-between;align-items:center;padding:14px;border-top:1px solid var(--border)}
-    .muted{color:var(--muted);font-size:12px}
-    .sr-only{position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden}
+        .stat-item {
+            text-align: center;
+        }
 
-    /* Print */
-    @media print{
-      header, .chips, .actions, .btns, dialog{display:none !important}
-      .card{break-inside:avoid}
-      body{background:#fff;color:#000}
-    }
-  </style>
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #fbbf24;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .search-container {
+            background: white;
+            padding: 1.5rem;
+            margin: 2rem auto;
+            max-width: 800px;
+            border-radius: 15px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+        }
+
+        #searchInput {
+            width: 100%;
+            padding: 15px 20px;
+            font-size: 1.1rem;
+            border: 3px solid #7e22ce;
+            border-radius: 30px;
+            outline: none;
+            transition: all 0.3s;
+        }
+
+        #searchInput:focus {
+            box-shadow: 0 0 20px rgba(126, 34, 206, 0.4);
+            border-color: #1e3c72;
+        }
+
+        nav {
+            background: white;
+            padding: 1rem 0;
+            margin: 2rem 0;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .nav-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            list-style: none;
+            padding: 1rem;
+        }
+
+        .nav-links a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 1rem;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: 600;
+            transition: all 0.3s;
+            background: linear-gradient(135deg, #1e3c72 0%, #7e22ce 100%);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .nav-links a:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+        }
+
+        main {
+            background: white;
+            margin: 2rem auto;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+
+        .category {
+            margin-bottom: 4rem;
+            padding: 2.5rem;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0e7ff 100%);
+            border-radius: 15px;
+            border-left: 5px solid #7e22ce;
+        }
+
+        .category h2 {
+            color: #1e3c72;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 4px solid #7e22ce;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .scheme {
+            background: white;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            border-left: 4px solid transparent;
+        }
+
+        .scheme:hover {
+            transform: translateX(10px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            border-left-color: #7e22ce;
+        }
+
+        .scheme h3 {
+            color: #7e22ce;
+            font-size: 1.7rem;
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .scheme-tag {
+            display: inline-block;
+            background: #fbbf24;
+            color: #1e3c72;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            margin-left: 0.5rem;
+        }
+
+        .scheme-info {
+            margin: 1rem 0;
+            padding-left: 1rem;
+            border-left: 3px solid #e0e7ff;
+        }
+
+        .scheme-info strong {
+            color: #1e3c72;
+            display: block;
+            margin-bottom: 0.3rem;
+            font-size: 1.1rem;
+        }
+
+        .website-link {
+            display: inline-block;
+            margin-top: 1.5rem;
+            padding: 0.8rem 2rem;
+            background: linear-gradient(135deg, #1e3c72 0%, #7e22ce 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s;
+            font-weight: 600;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .website-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+        }
+
+        footer {
+            background: linear-gradient(135deg, rgba(30, 60, 114, 0.95) 0%, rgba(126, 34, 206, 0.95) 100%);
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.9;
+            transition: opacity 0.3s;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+            text-decoration: underline;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 4rem;
+            color: #666;
+            font-size: 1.3rem;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .nav-links {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-bar {
+                gap: 1.5rem;
+            }
+
+            .stat-number {
+                font-size: 2rem;
+            }
+
+            main {
+                padding: 1.5rem;
+            }
+
+            .category {
+                padding: 1.5rem;
+            }
+
+            .scheme {
+                padding: 1.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <div class="wrap">
-      <div class="title" role="banner">
-        <div class="logo" aria-hidden="true">MS</div>
-        <div>
-          <h1>Maharashtra & India Schemes (2025)</h1>
-          <p class="subtitle">Search, filter, and view details compiled from the provided document.</p>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <h1>🇮🇳 Government Schemes Portal 2025</h1>
+                <p class="subtitle">Complete Guide to Maharashtra & Central Government Schemes</p>
+                <div class="stats-bar">
+                    <div class="stat-item">
+                        <div class="stat-number">60+</div>
+                        <div class="stat-label">Total Schemes</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">8</div>
+                        <div class="stat-label">Categories</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">2025</div>
+                        <div class="stat-label">Updated</div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="bar">
-        <label class="search" aria-label="Search schemes">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15.5 15.5L21 21" stroke="#54628e" stroke-width="2" stroke-linecap="round"/><circle cx="11" cy="11" r="7" stroke="#54628e" stroke-width="2"/></svg>
-          <input id="q" type="search" placeholder="Search by name, eligibility, benefits, documents…" autocomplete="off" />
-        </label>
-        <div class="actions">
-          <button class="secondary" id="clearBtn" aria-label="Clear search">Clear</button>
-          <button onclick="window.print()" aria-label="Print this page">Print</button>
+    </header>
 
-          <!-- Theme selector -->
-          <label class="selectlike" aria-label="Select theme">
-            <span style="font-size:12px;color:var(--muted)">Theme</span>
-            <select id="themeSelect">
-              <option value="white">White</option>
-              <option value="light">Light</option>
-              <option value="dark">Dark</option>
-              <option value="contrast">High‑Contrast</option>
-              <option value="maha">Maharashtra</option>
-              <option value="peacock">Peacock</option>
-            </select>
-          </label>
+    <div class="container">
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="🔍 Search by scheme name, eligibility, category, or benefit...">
         </div>
-      </div>
-      <div class="chips" role="tablist" aria-label="Filter by category">
-        <span class="chip active" data-cat="All" role="tab" aria-selected="true" tabindex="0">All</span>
-        <span class="chip" data-cat="Agriculture" role="tab" tabindex="0">Agriculture</span>
-        <span class="chip" data-cat="Education" role="tab" tabindex="0">Education</span>
-        <span class="chip" data-cat="Social Welfare" role="tab" tabindex="0">Social Welfare</span>
-        <span class="chip" data-cat="Energy & Environment" role="tab" tabindex="0">Energy & Environment</span>
-        <span class="chip" data-cat="Health & Nutrition" role="tab" tabindex="0">Health & Nutrition</span>
-        <span class="chip" data-cat="Housing" role="tab" tabindex="0">Housing</span>
-        <span class="chip" data-cat="Employment & Skill" role="tab" tabindex="0">Employment & Skill</span>
-        <span class="chip" data-cat="Women Welfare" role="tab" tabindex="0">Women Welfare</span>
-      </div>
-    </div>
-  </header>
 
-  <main class="wrap">
-    <section id="count" aria-live="polite" class="meta"></section>
-    <section class="grid" id="cards" aria-label="Scheme results"></section>
-  </main>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#agriculture">🌾 Agriculture</a></li>
+                <li><a href="#education">📚 Education</a></li>
+                <li><a href="#social-welfare">🤝 Social Welfare</a></li>
+                <li><a href="#energy">⚡ Energy</a></li>
+                <li><a href="#health">🏥 Health</a></li>
+                <li><a href="#housing">🏠 Housing</a></li>
+                <li><a href="#employment">💼 Employment</a></li>
+                <li><a href="#women-welfare">👩 Women Welfare</a></li>
+            </ul>
+        </nav>
 
-  <dialog id="modal" aria-modal="true">
-    <div class="modal-head">
-      <h3 id="mTitle">Scheme</h3>
-      <button id="mClose" aria-label="Close details">Close</button>
-    </div>
-    <div class="modal-body">
-      <div class="kvs">
-        <div class="kv">
-          <h4>Category</h4>
-          <p id="mCat"></p>
-        </div>
-        <div class="kv">
-          <h4>Portal</h4>
-          <span class="badge" id="mPortal">—</span>
-        </div>
-        <div class="kv" style="grid-column:1/-1">
-          <h4>Eligibility</h4>
-          <ul id="mElig"></ul>
-        </div>
-        <div class="kv" style="grid-column:1/-1">
-          <h4>Benefits</h4>
-          <ul id="mBen"></ul>
-        </div>
-        <div class="kv" style="grid-column:1/-1">
-          <h4>Documents</h4>
-          <ul id="mDoc"></ul>
-        </div>
-      </div>
-    </div>
-    <div class="modal-foot">
-      <span class="muted">External links are intentionally omitted; portal names are provided for reference.</span>
-      <button id="mClose2">Done</button>
-    </div>
-  </dialog>
+        <main id="mainContent">
+            <!-- Agriculture Section -->
+            <div class="category" id="agriculture">
+                <h2>🌾 Agriculture & Farmer Welfare</h2>
 
-  <script>
-  // THEME: init, persist, switch
-  const themeSelect = document.getElementById('themeSelect');
-  const APPLY_THEME = (val)=>{
-    const theme = ['white','light','dark','contrast','maha','peacock'].includes(val) ? val : 'white';
-    document.documentElement.setAttribute('data-theme', theme);
-    try{ localStorage.setItem('schemeTheme', theme); }catch(e){}
-    if(themeSelect) themeSelect.value = theme;
-  };
-  // On load (respect saved; else prefer system; else white)
-  let savedTheme = null;
-  try{ savedTheme = localStorage.getItem('schemeTheme'); }catch(e){}
-  const sys = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'white';
-  APPLY_THEME(savedTheme || sys);
-  // On change
-  themeSelect?.addEventListener('change', e=>APPLY_THEME(e.target.value));
+                <div class="scheme">
+                    <h3>Krishi Samruddhi Yojana<span class="scheme-tag">NEW 2025</span></h3>
+                    <div class="scheme-info">
+                        <strong>🎯 Eligibility:</strong>
+                        Small & marginal farmers, women farmers, SC/ST farmers, persons with disabilities (PwDs), Farmer Producer Organisations (FPOs), Agristac-registered farmers
+                    </div>
+                    <div class="scheme-info">
+                        <strong>📄 Required Documents:</strong>
+                        Agristac registration/Farmer ID, Aadhaar, land records, bank passbook, income certificate (if applicable)
+                    </div>
+                    <div class="scheme-info">
+                        <strong>💰 Benefits:</strong>
+                        Multi-year support for micro-irrigation, climate-resilient farming inputs, low-cost mechanization, soil health & crop diversification, DBT components. Budget: ₹25,000 crore over 5 years (~₹5,000 crore/year)
+                    </div>
+                    <a href="https://mahadbt.maharashtra.gov.in" class="website-link" target="_blank">Apply Now →</a>
+                </div>
 
-  // Data derived from the provided document; external URLs intentionally omitted (portal labels only).
-  const schemes = [
-    // A. Agriculture and Farmer Welfare
-    {id:"A1", name:"Krishi Samruddhi Yojana", category:"Agriculture", tag:"Maharashtra", portal:"MahaSDB Portal", 
-      eligibility:["Small & marginal farmers; SC/ST; women farmers; PwDs; FPOs"],
-      benefits:["Support for micro‑irrigation, climate‑resilient farming, mechanization, crop diversification"],
-      documents:["AgrisTAC ID","Aadhaar","Income certificate","Land records","Bank passbook"]},
-    {id:"A2", name:"Nanaji Deshmukh Krishi Sanjivani Yojana", category:"Agriculture", tag:"Maharashtra", portal:"Agriculture Dept. Portal",
-      eligibility:["Farmers in drought‑prone areas"],
-      benefits:["Soil improvement and drought resilience support"],
-      documents:["Aadhaar","Land documents","Domicile proof"]},
-    {id:"A3", name:"Dr. Babasaheb Ambedkar Krishi Swavalamban Yojana", category:"Agriculture", tag:"Maharashtra", portal:"NABARD",
-      eligibility:["SC/Neo‑Buddhist farmers with wells/ponds"],
-      benefits:["Subsidy for wells, ponds, irrigation pumps, micro‑irrigation (up to 90%)"],
-      documents:["Caste certificate","Land/water asset proof","Aadhaar"]},
-    {id:"A4", name:"Magel Tyala Shet Tale Yojana (Farm Pond)", category:"Agriculture", tag:"Maharashtra", portal:"Agriculture Dept. Portal",
-      eligibility:["Small/marginal farmers with 0.6+ ha land"],
-      benefits:["₹50,000 subsidy for farm pond construction"],
-      documents:["Land record","Aadhaar","Income certificate"]},
-    {id:"A5", name:"Mukhyamantri Saur Krushi Pump Yojana", category:"Agriculture", tag:"Maharashtra", portal:"MyScheme",
-      eligibility:["All registered farmers in Maharashtra"],
-      benefits:["Subsidized solar pumps for irrigation"],
-      documents:["Aadhaar","Land documents","Bank passbook"]},
-    {id:"A6", name:"Pradhan Mantri Kisan Samman Nidhi (PM‑Kisan)", category:"Agriculture", tag:"India", portal:"PM‑Kisan",
-      eligibility:["All landholding farmers"],
-      benefits:["₹6,000/year in 3 DBT installments"],
-      documents:["Aadhaar","Land proof","Bank passbook"]},
-    {id:"A7", name:"Namo Shetkari Maha Samman Nidhi", category:"Agriculture", tag:"Maharashtra", portal:"Maha Agri",
-      eligibility:["All PM‑Kisan beneficiaries"],
-      benefits:["Additional state DBT top‑up"],
-      documents:["Aadhaar","PM‑Kisan ID","Voter ID"]},
-    {id:"A8", name:"PM Fasal Bima Yojana (PMFBY)", category:"Agriculture", tag:"India", portal:"PMFBY",
-      eligibility:["All crop growers (voluntary/loanee)"],
-      benefits:["Crop insurance for natural calamities"],
-      documents:["Aadhaar","Land/crop proof"]},
-    {id:"A9", name:"Gramin Bhandaran Yojana (Rural Godown)", category:"Agriculture", tag:"India", portal:"NABARD",
-      eligibility:["Builders or farmers constructing warehouses"],
-      benefits:["Capital subsidy for rural storage"],
-      documents:["Project report","Aadhaar","Land approval"]},
-    {id:"A10", name:"Gat Sheti Yojana (Group Farming)", category:"Agriculture", tag:"Maharashtra", portal:"Agriculture Dept. Portal",
-      eligibility:["Groups of 10+ farmers with 100+ acres combined"],
-      benefits:["Up to ₹1 crore per group; technology and advisory support"],
-      documents:["Group registration","Aadhaar","Joint land documents"]},
+                <div class="scheme">
+                    <h3>Nanaji Deshmukh Krishi Sanjivani Yojana</h3>
+                    <div class="scheme-info">
+                        <strong>🎯 Eligibility:</strong>
+                        Farmers in drought-prone and degraded areas (state-specified)
+                    </div>
+                    <div class="scheme-info">
+                        <strong>📄 Required Documents:</strong>
+                        Aadhaar, land documents, domicile proof, Agristac/Farmer registration (if required by state)
+                    </div>
+                    <div class="scheme-info">
+                        <strong>💰 Benefits:</strong>
+                        Soil improvement, watershed interventions, drought resilience measures and grants/subsidies for land & water conservation
+                    </div>
+                    <a href="https://mahadbt.maharashtra.gov.in" class="website-link" target="_blank">Learn More →</a>
+                </div>
 
-    // B. Education
-    {id:"B1", name:"Post Matric Scholarship (SC/ST/OBC/SBC/VJNT)", category:"Education", tag:"Maharashtra", portal:"MahaDBT",
-      eligibility:["Students from SC/ST/OBC/SBC/VJNT pursuing post‑matric courses"],
-      benefits:["Tuition fees, exam fees, maintenance allowance"],
-      documents:["Caste certificate","Income certificate","Mark sheet","Aadhaar","Bank passbook"]},
-    {id:"B2", name:"Rajarshi Shahu Maharaj Scholarship", category:"Education", tag:"Maharashtra", portal:"MahaDBT",
-      eligibility:["SC students with ≥75% in 10th"],
-      benefits:["100% tuition and exam fee waiver"],
-      documents:["10th marksheet","Caste certificate","Income certificate","Aadhaar"]},
-    {id:"B3", name:"Eklavya Scholarship", category:"Education", tag:"Maharashtra", portal:"MahaDBT",
-      eligibility:["Arts/Commerce graduates ≥60%; Science graduates ≥70%"],
-      benefits:["₹5,000 annually"],
-      documents:["Degree marksheet","Income certificate","Aadhaar","Bank passbook"]},
-    {id:"B4", name:"Merit Scholarship for EBC Students", category:"Education", tag:"Maharashtra", portal:"MahaDBT",
-      eligibility:["Economically Backward Class students with high academic merit"],
-      benefits:["Cash incentive based on merit"],
-      documents:["Income certificate","Previous year marksheet","Aadhaar","Bank details"]},
-    {id:"B5", name:"State Government Open Merit Scholarship", category:"Education", tag:"Maharashtra", portal:"MahaDBT",
-      eligibility:["SSC >60% and pursuing higher secondary"],
-      benefits:["₹100 per month for two years"],
-      documents:["SSC marksheet","Aadhaar","Income certificate","School certificate"]},
+                <div class="scheme">
+                    <h3>Dr. Babasaheb Ambedkar Krishi Swavalamban Yojana</h3>
+                    <div class="scheme-info">
+                        <strong>🎯 Eligibility:</strong>
+                        SC/Neo-Buddhist farmers (state criteria) owning wells/ponds or with water assets
+                    </div>
+                    <div class="scheme-info">
+                        <strong>📄 Required Documents:</strong>
+                        Caste certificate, land/water asset proof, Aadhaar, bank details
+                    </div>
+                    <div class="scheme-info">
+                        <strong>💰 Benefits:</strong>
+                        Subsidies for wells, ponds, irrigation pumps and micro-irrigation (high subsidy rates)
+                    </div>
+                    <a href="https://mahadbt.maharashtra.gov.in" class="website-link" target="_blank">Apply Now →</a>
+                </div>
 
-    // C. Social Welfare
-    {id:"C1", name:"Sanjay Gandhi Niradhar Anudan Yojana", category:"Social Welfare", tag:"Maharashtra", portal:"SJSA",
-      eligibility:["SC/ST, OBCs, Differently Abled, Destitute; Age 18–65; BPL; no income source"],
-      benefits:["₹600/month (individual); ₹900/month (2+ beneficiaries)"],
-      documents:["Aadhaar","BPL Card","Income & Disability Certificate (if applicable)","Age proof","Bank passbook"]},
-    {id:"C2", name:"Shravan Bal Seva Pension", category:"Social Welfare", tag:"Maharashtra", portal:"SJSA",
-      eligibility:["Senior citizens 65+; Maharashtra resident; BPL; not receiving central pension"],
-      benefits:["₹600/month pension"],
-      documents:["Aadhaar","BPL Ration Card","Age & Domicile Proof","Bank passbook"]},
-    {id:"C3", name:"Indira Gandhi National Widow Pension", category:"Social Welfare", tag:"India", portal:"NSAP",
-      eligibility:["Widows aged 40–59 from BPL households"],
-      benefits:["₹300–₹500 per month (state‑wise variation)"],
-      documents:["Aadhaar","Death certificate","Income certificate","BPL proof","Bank passbook"]},
-    {id:"C4", name:"Indira Gandhi Disability Pension", category:"Social Welfare", tag:"India", portal:"NSAP",
-      eligibility:["Persons 18–59 with ≥80% disability from BPL households"],
-      benefits:["₹300–₹500 per month (state‑wise variation)"],
-      documents:["Aadhaar","Disability certificate","Income certificate","BPL proof","Bank passbook"]},
-    {id:"C5", name:"Mahatma Phule Jan Arogya Yojana", category:"Social Welfare", tag:"Maharashtra", portal:"MJPJAY",
-      eligibility:["Residents with Yellow/Orange ration card; SC/ST; economically weaker"],
-      benefits:["Free treatment up to ₹1.5 lakh/year in empaneled hospitals"],
-      documents:["Aadhaar","Ration card","Hospital referral/diagnosis","Caste certificate (if SC/ST)"]},
+                <div class="scheme">
+                    <h3>Magel Tyala Shet Tale Yojana (Farm Pond Scheme)</h3>
+                    <div class="scheme-info">
+                        <strong>🎯 Eligibility:</strong>
+                        Small/marginal farmers with ≥0.6 ha land (state criteria)
+                    </div>
+                    <div class="scheme-info">
+                        <strong>📄 Required Documents:</strong>
+                        Land record, Aadhaar, income certificate, farmer registration
+                    </div>
+                    <div class="scheme-info">
+                        <strong>💰 Benefits:</strong>
+                        Fixed subsidy of ₹50,000 for farm-pond construction
+                    </div>
+                    <a href="https://mahadbt.maharashtra.gov.in" class="website-link" target="_blank">Apply Now →</a>
+                </div>
 
-    // D. Energy & Environment
-    {id:"D1", name:"Solar Pump Subsidy (PM‑KUSUM)", category:"Energy & Environment", tag:"India", portal:"MNRE",
-      eligibility:["Farmers (small, marginal, individual or groups) with land & water source or land for leasing"],
-      benefits:["60% subsidy, 30% loan, 10% contribution for solar pump"],
-      documents:["Aadhaar","Land ownership proof","Bank passbook","Passport photo"]},
-    {id:"D2", name:"UJALA – Affordable LEDs", category:"Energy & Environment", tag:"India", portal:"EESL",
-      eligibility:["All households/public institutions with valid electricity connection"],
-      benefits:["LED bulbs and appliances at subsidized prices"],
-      documents:["Aadhaar","Address proof","Electricity bill"]},
-    {id:"D3", name:"Pradhan Mantri Ujjwala Yojana (PMUY)", category:"Energy & Environment", tag:"India", portal:"PMUY",
-      eligibility:["Women from BPL families without an existing LPG connection"],
-      benefits:["Free LPG connection, first refill, and stove"],
-      documents:["Aadhaar","BPL card","Ration card","Age & ID proof"]},
-    {id:"D4", name:"Jal Shakti Abhiyan / Water Schemes", category:"Energy & Environment", tag:"India", portal:"WR/Jal Shakti",
-      eligibility:["Rural communities in water‑stressed or drought‑prone regions"],
-      benefits:["Groundwater recharge, rainwater harvesting, water body restoration, watershed development"],
-      documents:["Aadhaar","Project proposal via NGO/Gram Panchayat","Local authority approval"]},
+                <div class="scheme">
+                    <h3>Mukhyamantri Saur Krushi Pump Yojana</h3>
+                    <div class="scheme-info">
+                        <strong>🎯 Eligibility:</strong>
+                        Registered farmers in Maharashtra; land & irrigation proof required
+                    </div>
+                    <div class="scheme-info">
+                        <strong>📄 Required Documents:</strong>
+                        Aadhaar, land documents, bank passbook, farmer registration (Agristac/MahaDBT)
+                    </div>
+                    <div class="scheme-info">
+                        <strong>💰 Benefits:</strong>
+                        Subsidized solar pumps (state scheme variant)
+                    </div>
+                    <a href="https://mahadbt.maharashtra.gov.in" class="website-link" target="_blank">Apply Now →</a>
+                </div>
 
-    // E. Health & Nutrition
-    {id:"E1", name:"Mahatma Jyotiba Phule Jan Arogya Yojana (MJPJAY)", category:"Health & Nutrition", tag:"Maharashtra", portal:"MJPJAY",
-      eligibility:["BPL families, SC/ST, farmers, senior citizens; Yellow/Orange ration card holders in Maharashtra"],
-      benefits:["Free treatment up to ₹1.5–₹2 lakh/year at empaneled hospitals"],
-      documents:["Aadhaar","Ration card","Hospital referral","Income certificate"]},
-    {id:"E2", name:"Ayushman Bharat (PM‑JAY)", category:"Health & Nutrition", tag:"India", portal:"PM‑JAY",
-      eligibility:["BPL families across India as per SECC"],
-      benefits:["Health cover of ₹5 lakh/year/family for secondary & tertiary care"],
-      documents:["Aadhaar","Ration card","PM‑JAY card (if available)","SECC ID"]},
-    {id:"E3", name:"Bal Sanjeevani (Child Nutrition)", category:"Health & Nutrition", tag:"Maharashtra/India", portal:"ICDS/State",
-      eligibility:["Malnourished children under 6 years diagnosed via Anganwadi/PHC programs"],
-      benefits:["Free nutrition kits, regular checkups, supplements, hospital referrals"],
-      documents:["Child Health Card","Anganwadi/PHC certificate","Aadhaar (if available)"]},
-    {id:"E4", name:"Janani Suraksha Yojana (JSY)", category:"Health & Nutrition", tag:"India", portal:"NHM",
-      eligibility:["Pregnant women, especially rural SC/ST and BPL"],
-      benefits:["₹700–₹1,400 for institutional delivery and transport"],
-      documents:["Aadhaar","Delivery record","BPL card","Mother & Child Health card"]},
-    {id:"E5", name:"TB Control, HIV/AIDS & Disability Care", category:"Health & Nutrition", tag:"India", portal:"NHM",
-      eligibility:["TB patients, HIV+ individuals, and PwDs; BPL or medically eligible"],
-      benefits:["Free diagnosis, treatment, ARVs, counseling, disability aids, nutritional support"],
-      documents:["Aadhaar","Medical certificate","Income proof (for BPL)","Disability ID (if applicable)"]},
+                <div class="scheme">
+                    <h3>Pradhan Mantri Kisan Samman Nidhi (PM-Kisan)</h3>
+                    <div class="scheme-info">
+                        <strong>🎯 Eligibility:</strong>
+                        All land-holding farmers (subject to exclusions listed on PM-Kisan portal)
+                    </div>
+                    <div class="scheme-info">
+                        <strong>📄 Required Documents:</strong>
+                        Aadhaar, bank account details, land ownership proof/farmer registry details
+                    </div>
+                    <div class="scheme-info">
+                        <strong>💰 Benefits:</strong>
+                        ₹6,000/year paid in 3 equal DBT instalments (central scheme)
+                    </div>
+                    <a href="https://pmkisan.gov.in" class="website-link" target="_blank">Check Status →</a>
+                </div>
 
-    // F. Housing
-    {id:"F1", name:"Pradhan Mantri Awas Yojana – Urban (PMAY‑U)", category:"Housing", tag:"India", portal:"PMAY‑U",
-      eligibility:["Urban poor (EWS/LIG/MIG‑I/II), slum dwellers; no pucca house; first‑time home buyer; income within limits"],
-      benefits:["Interest subsidy on home loans up to ₹2.67 lakh; financial aid for construction"],
-      documents:["Aadhaar","Income proof","Property papers","Bank details","Self‑declaration of not owning house"]},
-    {id:"F2", name:"Pradhan Mantri Awas Yojana – Gramin (PMAY‑G)", category:"Housing", tag:"India", portal:"PMAY‑G",
-      eligibility:["Rural poor; no pucca house; name in SECC 2011; priority for SC/ST, women‑headed households, etc."],
-      benefits:["₹1.2–₹1.3 lakh grant for house construction with basic amenities"],
-      documents:["Aadhaar","SECC proof","Bank account","Job card (MGNREGA)","Caste certificate (if SC/ST)"]},
-    {id:"F3", name:"MHADA Lottery Scheme", category:"Housing", tag:"Maharashtra", portal:"MHADA",
-      eligibility:["Maharashtra residents 18+ in EWS/LIG/MIG/HIG income groups"],
-      benefits:["Affordable housing via lottery in cities like Mumbai and Pune"],
-      documents:["Aadhaar","PAN card","Income certificate","Domicile proof","Bank details"]},
-    {id:"F4", name:"Slum Rehabilitation Scheme (SRA)", category:"Housing", tag:"Maharashtra", portal:"SRA",
-      eligibility:["Slum dwellers in notified slums before cut‑off date (e.g., 2000 or as defined)"],
-      benefits:["Free pucca housing unit in the same locality with better facilities"],
-      documents:["Aadhaar","Slum proof","Biometric survey details","Domicile certificate"]},
-    {id:"F5", name:"Affordable Rental Housing Complexes (ARHC)", category:"Housing", tag:"India", portal:"PMAY‑U",
-      eligibility:["Urban migrants, poor workers, students, laborers"],
-      benefits:["Safe, affordable rental housing near employment zones"],
-      documents:["Aadhaar","Employment proof (if available)","Rental agreement"]},
+                <div class="scheme">
+                    <h3>Namo Shetkari Maha Samman Nidhi Yojana</h3>
+                    <div class="scheme-info">
+                        <strong>🎯 Eligibility:</strong>
+                        Beneficiaries of PM-Kisan (state top-up conditions as per Maharashtra government)
+                    </div>
+                    <div class="scheme-info">
+                        <strong>📄 Required Documents:</strong>
+                        PM-Kisan ID/Aadhaar, bank details, voter ID as required
+                    </div>
+                    <div class="scheme-info">
+                        <strong>💰 Benefits:</strong>
+                        State DBT top-up amount added to central PM-Kisan payments
+                    </div>
+                    <a href="https://mahadbt.maharashtra.gov.in" class="website-link" target="_blank">Apply Now →</a>
+                </div>
 
-    // G. Employment & Skill
-    {id:"G1", name:"Pradhan Mantri Kaushal Vikas Yojana (PMKVY 4.0)", category:"Employment & Skill", tag:"India", portal:"PMKVY",
-      eligibility:["Youth across India"],
-      benefits:["Free skill training and monetary rewards; RPL recognition"],
-      documents:["ID proof","Educational certificate","Photographs"]},
-    {id:"G2", name:"Deen Dayal Upadhyaya Grameen Kaushalya Yojana (DDU‑GKY)", category:"Employment & Skill", tag:"India", portal:"DDU‑GKY",
-      eligibility:["Rural youth 15–35 from poor households"],
-      benefits:["Skill training with job placement support under NRLM; digital vouchers"],
-      documents:["ID","Income & residence proof","Bank details"]},
-    {id:"G3", name:"DAY‑NULM (Urban) & DDU‑GKY (Rural)", category:"Employment & Skill", tag:"India", portal:"DAY‑NULM / DDU‑GKY",
-      eligibility:["Urban and rural poor individuals"],
-      benefits:["Skill training, self‑employment support, micro‑finance, SHG promotion"],
-      documents:["Income proof","Residence proof","ID","Bank details"]},
-    {id:"G4", name:"Prime Minister’s Employment Generation Programme (PMEGP)", category:"Employment & Skill", tag:"India", portal:"KVIC/PMEGP",
-      eligibility:["Traditional artisans, unemployed youth, rural and urban individuals"],
-      benefits:["Margin subsidy on business loans—up to 25% rural / 15% urban; higher for SC/ST/OBC/minorities/women"],
-      documents:["Project report","ID","Residence proof","Bank documents"]},
-    {id:"G5", name:"Stand‑Up India", category:"Employment & Skill", tag:"India", portal:"Stand‑Up India",
-      eligibility:["SC/ST and women entrepreneurs for greenfield enterprises"],
-      benefits:["Bank loans between ₹10 lakh and ₹1 crore"],
-      documents:["Business plan","ID/KYC","Caste certificate","Income certificate"]},
-    {id:"G6", name:"Assistance to Skill Development of OBCs/DNTs/EBCs", category:"Employment & Skill", tag:"India", portal:"Govt. Scheme",
-      eligibility:["OBCs, Denotified Tribes, Economically Backward Classes"],
-      benefits:["Skill development for income‑generating activities via partnerships"],
-      documents:["Community certificate","ID proof","Income proof"]},
-    {id:"G7", name:"Learn and Earn – Skill Development for Minorities", category:"Employment & Skill", tag:"India", portal:"Govt. Scheme",
-      eligibility:["Members of minority communities"],
-      benefits:["Training in traditional trades with placement support"],
-      documents:["Minority certificate","ID","Educational/training details"]},
-    {id:"G8", name:"Nai Manzil", category:"Employment & Skill", tag:"India", portal:"Govt. Scheme",
-      eligibility:["Minority youth without formal school certificates"],
-      benefits:["Integrated formal education and vocational training"],
-      documents:["Identity proof","Minority certificate"]},
-    {id:"G9", name:"USTTAD – Training in Traditional Arts/Crafts", category:"Employment & Skill", tag:"India", portal:"MyScheme",
-      eligibility:["Minority artisans and craftsmen"],
-      benefits:["Training to enhance livelihood opportunities"],
-      documents:["Artisan proof","ID","Community proof"]},
-    {id:"G10", name:"Employment‑Linked Incentive (ELI) Scheme", category:"Employment & Skill", tag:"India", portal:"—",
-      eligibility:["Employers and first‑time job seekers"],
-      benefits:["₹15,000 subsidy for job‑seekers; ₹3,000/month per new employee for six months (employers)"],
-      documents:["Job/offer letters","Employee details"]},
+                <div class="scheme">
+                    <h3>Pradhan Mantri Fasal Bima Yojana (PMFBY)</h3>
+                    <div class="scheme-info">
+                        <strong>🎯 Eligibility:</strong>
+                        All farmers growing notified crops in notified areas — both loanee and voluntary
+                    </div>
+                    <div class="scheme-info">
+                        <strong>📄 Required Documents:</strong>
+                        Aadhaar, land/crop proof, bank details, crop/field details
+                    </div>
+                    <div class="scheme-info">
+                        <strong>💰 Benefits:</strong>
+                        Crop insurance cover against yield loss due to natural calamities, pests & diseases
+                    </div>
+                    <a href="https://pmfby.gov.in" class="website-link" target="_blank">Get Insurance →</a>
+                </div>
 
-    // H. Women Welfare
-    {id:"H1", name:"Pradhan Mantri Matru Vandana Yojana (PMMVY)", category:"Women Welfare", tag:"India", portal:"PMMVY",
-      eligibility:["Pregnant & lactating women 19+ for first live birth"],
-      benefits:["₹6,000 conditional cash transfer in installments"],
-      documents:["Identity proof","Pregnancy registration","Bank details"]},
-    {id:"H2", name:"Beti Bachao Beti Padhao (BBBP)", category:"Women Welfare", tag:"India", portal:"BBBP",
-      eligibility:["All citizens; focus on girl child survival, education, empowerment"],
-      benefits:["Awareness campaigns and institutional support"],
-      documents:["Not applicable (programmatic)"]},
-    {id:"H3", name:"Mahila Shakti Kendra (MSK)", category:"Women Welfare", tag:"India", portal:"MWCD",
-      eligibility:["Rural women"],
-      benefits:["Training, counseling, information, and service linkages"],
-      documents:["Identity and address proof"]},
-    {id:"H4", name:"Indira Gandhi National Widow Pension", category:"Women Welfare", tag:"India", portal:"NSAP",
-      eligibility:["Widows from BPL households aged 40–79"],
-      benefits:["₹300/month; ₹500 after age 80"],
-      documents:["Widowhood proof","BPL certificate","ID & address proof"]},
-    {id:"H5", name:"Swadhar Greh", category:"Women Welfare", tag:"India", portal:"MWCD – Swadhar",
-      eligibility:["Women in difficult circumstances (e.g., trafficking victims, destitute)"],
-      benefits:["Shelter, food, clothing, health & legal support, vocational training"],
-      documents:["ID proof","Referral from NGO/authority"]},
-    {id:"H6", name:"Stand‑Up India (Women)", category:"Women Welfare", tag:"India", portal:"Stand‑Up India",
-      eligibility:["Women (and SC/ST) entrepreneurs establishing non‑farm enterprises"],
-      benefits:["Bank loans ₹10 lakh–₹1 crore"],
-      documents:["Business plan","ID proof","Address proof","Registration documents"]},
-    {id:"H7", name:"Subhadra Yojana (Odisha)", category:"Women Welfare", tag:"Odisha", portal:"Odisha Govt.",
-      eligibility:["Women aged 21–60 from EWS; excludes govt employees and taxpayers"],
-      benefits:["₹50,000 over 5 years via Aadhaar‑linked bank account"],
-      documents:["ID proof","Aadhaar","Bank details","Income proof"]},
-    {id:"H8", name:"Kanyashree Prakalpa (West Bengal)", category:"Women Welfare", tag:"West Bengal", portal:"Kanyashree",
-      eligibility:["Unmarried girls 13–18; family income ≤ ₹1.2 lakh (relaxed for special categories)"],
-      benefits:["₹1,000 annual scholarship; ₹25,000 one‑time grant at 18"],
-      documents:["ID proof","Age certificate","School enrollment proof","Income certificate"]},
-    {id:"H9", name:"Kishori Shakti Yojana", category:"Women Welfare", tag:"India", portal:"MWCD",
-      eligibility:["Adolescent girls aged 11–18 under ICDS"],
-      benefits:["Education, vocational training, health awareness"],
-      documents:["Birth certificate","ID","School enrollment proof"]},
-    {id:"H10", name:"MKSP & Janani Suraksha Yojana (JSY)", category:"Women Welfare", tag:"India", portal:"MKSP / JSY",
-      eligibility:["Women farmers (MKSP); Pregnant women, especially BPL (JSY)"],
-      benefits:["Technical training, financial aid, livelihood support (MKSP); Cash assistance for institutional delivery (JSY)"],
-      documents:["ID","Land/farming proof (MKSP)","Healthcare records (JSY)"]}
-  ];
+                <div class="scheme">
+                    <h3>Gramin Bhandaran Yojana (Rural Godown Scheme)</h3>
+                    <div class="scheme-info">
+                        <strong>🎯 Eligibility:</strong>
+                        Individuals/farmer groups/entrepreneurs constructing rural storage
+                    </div>
+                    <div class="scheme-info">
+                        <strong>📄 Required Documents:</strong>
+                        Project report, land approval documents, Aadhaar, bank details
+                    </div>
+                    <div class="scheme-info">
+                        <strong>💰 Benefits:</strong>
+                        Capital subsidy for construction of rural godowns/warehouses; loan support via banks/NABARD
+                    </div>
+                    <a href="https://nabard.org" class="website-link" target="_blank">Learn More →</a>
+                </div>
 
-  const cardsEl = document.getElementById('cards');
-  const countEl = document.getElementById('count');
-  const qEl = document.getElementById('q');
-  const clearBtn = document.getElementById('clearBtn');
+                <div class="scheme">
+                    <h3>Gat Sheti Yojana (Group Farming)</h3>
+                    <div class="scheme-info">
+                        <strong>🎯 Eligibility:</strong>
+                        Group of farmers (often 10+ farmers with combined land threshold)
+                    </div>
+                    <div class="scheme-info">
+                        <strong>📄 Required Documents:</strong>
+                        Group registration, Aadhaar, joint land documents, FPO/SHG registration if applicable
+                    </div>
+                    <div class="scheme-info">
+                        <strong>💰 Benefits:</strong>
+                        Group finance support (₹1 crore/group), technical & advisory assistance, aggregated procurement/marketing support
+                    </div>
+                    <a href="https://mahadbt.maharashtra.gov.in" class="website-link" target="_blank">Apply Now →</a>
+                </div>
 
-  const modal = document.getElementById('modal');
-  const mTitle = document.getElementById('mTitle');
-  const mCat = document.getElementById('mCat');
-  const mPortal = document.getElementById('mPortal');
-  const mElig = document.getElementById('mElig');
-  const mBen = document.getElementById('mBen');
-  const mDoc = document.getElementById('mDoc');
-  const mClose = document.getElementById('mClose');
-  const mClose2 = document.getElementById('mClose2');
+                <div class="scheme">
+                    <h3>Mission for Aatmanirbharta in Pulses<span class="scheme-tag">NEW 2025</span></h3>
+                    <div class="scheme-info">
+                        <strong>🎯 Eligibility:</strong>
+                        Farmers & pulse value-chain participants
+                    </div>
+                    <div class="scheme-info">
+                        <strong>📄 Required Documents:</strong>
+                        Farmer registration, land proof, Aadhaar
+                    </div>
+                    <div class="scheme-info">
+                        <strong>💰 Benefits:</strong>
+                        Production incentives, support for increased pulse production, procurement/market interventions. Budget: ₹11,440 crore (2025-26 to 2030-31)
+                    </div>
+                    <a href="https://agricoop.nic.in" class="website-link" target="_blank">Learn More →</a>
+                </div>
+            </div>
 
-  let state = { q:'', cat:'All' };
+            <!-- Education Section -->
+            <div class="category" id="education">
+                <h2>📚 Education Scholarships</h2>
 
-  function render(){
-    const filtered = schemes.filter(s=>{
-      const inCat = state.cat==='All' || s.category===state.cat;
-      const hay = (s.name+' '+s.category+' '+s.tag+' '+s.portal+' '+s.eligibility.join(' ')+' '+s.benefits.join(' ')+' '+s.documents.join(' ')).toLowerCase();
-      const inQ = !state.q || hay.includes(state.q.toLowerCase());
-      return inCat && inQ;
-    });
-    cardsEl.innerHTML = filtered.map(s=>cardHTML(s)).join('');
-    countEl.textContent = `${filtered.length} scheme${filtered.length===1?'':'s'} shown`;
-    filtered.forEach(s=>{
-      const btn = document.getElementById('v-'+s.id);
-      btn?.addEventListener('click',()=>openModal(s));
-    });
-  }
+                <div class="scheme">
+                    <h3>Post Matric Scholarships (SC/ST/OBC/SBC/VJNT)</h3>
+                    <div class="scheme-info">
+                        <strong>🎯 Eligibility:</strong>
+                        Students from SC/ST/OBC/SBC/VJNT categories pursuing post-matric studies (income criteria apply)
+                    </div>
+                    <div class="scheme-info">
+                        <strong>📄 Required Documents:</strong>
+                        Caste certificate, income certificate, mark sheets, Aadhaar, bank passbook
+                    </div>
+                    <div class="scheme-info">
+                        <strong>💰 Benefits:</strong>
+                        Tuition & exam fee reimbursement, maintenance allowance (amount varies by category & course)
+                    </div>
+                    <a href="https://mahadbt.maharashtra.gov.in" class="website-link" target="_blank">Apply Now →</a>
+                </div>
 
-  function esc(str){ return str.replace(/[&<>"']/g, m=>({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m])); }
+                <div class="scheme">
+                    <h3>Rajarshi Shahu Maharaj Scholarship</h3>
+                    <div class="scheme-info">
+                        <strong>🎯 Eligibility:</strong>
+                        SC students scoring ≥75% in 10th standard (state conditions)
+                    </div>
+                    <div class="scheme-info">
+                        <strong>📄 Required Documents:</strong>
+                        10th marksheet, caste & income certificates, Aadhaar
+                    </div>
+                    <div class="scheme-info">
+                        <strong>💰 Benefits:</strong>
+                        100% tuition & exam fee waiver (as per state rules)
+                    </div>
+                    <a href="https://mahadbt.maharashtra.gov.in" class="website-link" target="_blank">Apply Now →</a>
+                </div>
 
-  function cardHTML(s){
-    return `
-      <article class="card" aria-label="${esc(s.name)}">
-        <div>
-          <span class="tag">${esc(s.category)}</span>
-          <span class="pill" title="Jurisdiction">${esc(s.tag)}</span>
-        </div>
-        <h3 class="name">${esc(s.name)}</h3>
-        <p class="meta">Portal: ${esc(s.portal || '—')}</p>
-        <div class="btns">
-          <button id="v-${s.id}" class="view">View details</button>
-        </div>
-      </article>
-    `;
-  }
+                <div class="scheme">
+                    <h3>Eklavya Scholarship</h3>
+                    <div class="scheme-info">
+                        <strong>🎯 Eligibility:</strong>
+                        Graduate students meeting percentage thresholds (Arts/Commerce ≥60%, Science ≥70%)
+                    </div>
+                    <div class="scheme-info">
+                        <strong>📄 Required Documents:</strong>
+                        Degree marksheet, income certificate, Aadhaar, bank passbook
+                    </div>
+                    <div class="scheme-info">
+                        <strong>💰 Benefits:</strong>
+                        Annual cash scholarship of ₹5,000
+                    </div>
+                    <a href="https://mahadbt.maharashtra.gov.in" class="website-link" target="_blank">Apply Now →</a>
+                </div>
 
-  function listify(el, arr){
-    el.innerHTML = arr.map(x=>`<li>${esc(x)}</li>`).join('');
-  }
+                <div class="scheme">
+                    <h3>Merit Scholarship for Economically Backward Class Students</h3>
+                    <div class="scheme-info">
+                        <strong>🎯 Eligibility:</strong>
+                        EBC and merit thresholds as per state notifications
+                    </div>
+                    <div class="scheme-info">
+                        <strong>📄 Required Documents:</strong>
+                        Income proof, marksheets, Aadhaar, bank details
+                    </div>
+                    <div class="scheme-info">
+                        <strong>💰 Benefits:</strong>
+                        Cash incentives/monthly stipends; amounts & duration listed on MahaDBT
+                    </div>
+                    <a href="https://mahadbt.maharashtra.gov.in" class="website-link" target="_blank">Apply Now →</a>
+                </div>
 
-  function openModal(s){
-    mTitle.textContent = s.name;
-    mCat.textContent = `${s.category} • ${s.tag}`;
-    mPortal.textContent = s.portal || '—';
-    listify(mElig, s.eligibility||[]);
-    listify(mBen, s.benefits||[]);
-    listify(mDoc, s.documents||[]);
-    modal.showModal();
-  }
+                <div class="scheme">
+                    <h3>State Government Open Merit Scholarship</h3>
+                    <div class="scheme-info">
+                        <strong>🎯 Eligibility:</strong>
+                        Merit thresholds as per state notifications
+                    </div>
+                    <div class="scheme-info">
+                        <strong>📄 Required Documents:</strong>
+                        Income proof, marksheets, Aadhaar, bank details
+                    </div>
+                    <div class="scheme-info">
+                        <strong>💰 Benefits:</strong>
+                        Cash incentives/monthly stipends for merit students
+                    </div>
+                    <a href="https://mahadbt.maharashtra.gov.in" class="website-link" target="_blank">Apply Now →</a>
+                </div>
+            </div>
 
-  // Events
-  qEl.addEventListener('input', e=>{ state.q = e.target.value.trim(); render(); });
-  clearBtn.addEventListener('click', ()=>{ qEl.value=''; state.q=''; render(); });
-  document.querySelectorAll('.chip').forEach(ch=>{
-    ch.addEventListener('click', ()=>{
-      document.querySelectorAll('.chip').forEach(c=>c.classList.remove('active'));
-      ch.classList.add('active');
-      state.cat = ch.dataset.cat;
-      render();
-    });
-    ch.addEventListener('keydown', (e)=>{ if(e.key==='Enter' || e.key===' '){ ch.click(); } });
-  });
-  mClose.addEventListener('click', ()=>modal.close());
-  mClose2?.addEventListener('click', ()=>modal.close());
-  modal.addEventListener('click', (e)=>{ if(e.target===modal) modal.close(); });
+            <!-- Social Welfare Section -->
+            <div class="category" id="social-welfare">
+                <h2>🤝 Social Welfare Programs</h2>
 
-  // init
-  render();
-  </script>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1, viewport-fit=cover"
-  />
-  <title>Maharashtra & India Schemes – 2025</title>
-  <meta name="description" content="Searchable directory of Maharashtra and India government schemes based on the provided document." />
-  <style>
-    /* Base (fallback) */
-    :root{
-      --bg:#0b1020;
-      --card:#111831;
-      --card-2:#0e152c;
-      --text:#0d1530;
-      --muted:#41507a;
-      --accent:#1f65ff;
-      --accent-2:#0aa06e;
-      --chip:#e8edff;
-      --danger:#d93030;
-      --ok:#148d53;
-      --warning:#b36b00;
-      --border:#d7def1;
-      --shadow:0 8px 24px rgba(0,0,0,.10);
-      --radius:14px;
-    }
+                <div class="scheme">
+                    <h3>Sanjay Gandhi Niradhar Anudan Yojana (SJSA)</h3>
+                    <div class="scheme-info">
+                        <strong>🎯 Eligibility:</strong>
+                        Destitute/no-income households including SC/ST/OBC/differently abled residents in Maharashtra (Age 18-65, BPL criteria)
+                    </div>
+                    <div class="scheme-info">
+                        <strong>📄 Required Documents:</strong>
+                        Aadhaar, BPL/Ration card, income & disability certificates (if applicable), age proof, bank passbook
+                    </div>
+                    <div class="scheme-info">
+                        <strong>💰 Benefits:</strong>
+                        Monthly grant: ₹600 for individuals; ₹900 for households with 2+ beneficiaries
+                    </div>
+                    <a href="http://sjsa.maharashtra.gov.in" class="website-link" target="_blank">Apply Now →</a>
+                </div>
 
-    /* Dark (as before) */
-    [data-theme="dark"]{
-      --bg:#0b1020;
-      --card:#111831;
-      --card-2:#0e152c;
-      --text:#ecf0ff;
-      --muted:#b7c0e0;
-      --accent:#6ea8fe;
-      --accent-2:#70e1a1;
-      --chip:#1b2547;
-      --danger:#ff7b7b;
-      --ok:#7dffa3;
-      --warning:#ffd37d;
-      --border:#243055;
-      --shadow:0 8px 24px rgba(0,0,0,.35);
-    }
+                <div class="scheme">
+                    <h3>Shravan Bal Seva Pension Scheme</h3>
+                    <div class="scheme-info">
+                        <strong>🎯 Eligibility:</strong>
+                        Senior citizens (BPL/state categories) aged ≥65 years (state rules)
+                    </div>
+                    <div class="scheme-info">
+                        <strong>📄 Required Documents:</strong>
+                        Aadhaar, BPL ration card, age & domicile proof, bank passbook
+                    </div>
+                    <div class="scheme-info">
+                        <strong>💰 Benefits:</strong>
+                        Monthly pension of ₹600
+                    </div>
+                    <a href="http://sjsa.maharashtra.gov.in" class="website-link" target="_blank">Apply Now →</a>
+                </div>
 
-    /* Light (neutral) */
-    [data-theme="light"]{
-      --bg:#f6f8ff;
-      --card:#ffffff;
-      --card-2:#f7f9ff;
-      --text:#0d1530;
-      --muted:#41507a;
-      --accent:#1f65ff;
-      --accent-2:#0aa06e;
-      --chip:#eef3ff;
-      --danger:#d93030;
-      --ok:#148d53;
-      --warning:#b36b00;
-      --border:#dbe3f5;
-      --shadow:0 8px 24px rgba(0,20,60,.08);
-    }
+                <div class="scheme">
+                    <h3>Indira Gandhi National Widow Pension</h3>
+                    <div class="scheme-info">
+                        <strong>🎯 Eligibility:</strong>
+                        Widows in BPL households (central NSAP criteria; states may vary)
+                    </div>
+                    <div class="scheme-info">
+                        <strong>📄 Required Documents:</strong>
+                        Widowhood/death certificate, BPL/income proof, Aadhaar, bank passbook
+                    </div>
+                    <div class="scheme-info">
+                        <strong>💰 Benefits:</strong>
+                        Central pension amounts (varies; e.g., ₹300-500/month)
+                    </div>
+                    <a href="http://nsap.nic.in" class="website-link" target="_blank">Apply Now →</a>
+                </div>
 
-    /* NEW White theme (bright, minimal) */
-    [data-theme="white"]{
-      --bg:#ffffff;         /* page background */
-      --card:#ffffff;       /* card surface */
-      --card-2:#ffffff;     /* modal/secondary surface */
-      --text:#0b1225;       /* strong body text */
-      --muted:#3c4a6e;      /* secondary text */
-      --accent:#0b57d0;     /* blue accent */
-      --accent-2:#0aa06e;   /* secondary accent */
-      --chip:#f3f6ff;       /* chip/button background */
-      --danger:#c62828;     /* error */
-      --ok:#1b8e5a;         /* success */
-      --warning:#b36b00;    /* warning */
-      --border:#e7ecf5;     /* light borders */
-      --shadow:0 10px 28px rgba(7,20,60,.06);
-    }
+                <div class="scheme">
+                    <h3>Indira Gandhi Disability Pension (NSAP)</h3>
+                    <div class="scheme-info">
+                        <strong>🎯 Eligibility:</strong>
+                        Persons with Disabilities in BPL households (central NSAP criteria)
+                    </div>
+                    <div class="scheme-info">
+                        <strong>📄 Required Documents:</strong>
+                        Disability certificate, BPL/income proof, Aadhaar, bank passbook
+                    </div>
+                    <div class="scheme-info">
+                        <strong>💰 Benefits:</strong>
+                        Central pension amounts (varies; e.g., ₹300-500/month)
+                    </div>
+                    <a href="http://nsap.nic.in" class="website-link" target="_blank">Apply Now →</a>
+                </div>
 
-    /* High‑Contrast */
-    [data-theme="contrast"]{
-      --bg:#000000;
-      --card:#0f0f0f;
-      --card-2:#111111;
-      --text:#ffffff;
-      --muted:#e0e0e0;
-      --accent:#00c8ff;
-      --accent-2:#00ff7f;
-      --chip:#1a1a1a;
-      --danger:#ff3b3b;
-      --ok:#29ff9a;
-      --warning:#ffd23c;
-      --border:#2a2a2a;
-      --shadow:none;
-    }
-
-    /* Maharashtra palette */
-    [data-theme="maha"]{
-      --bg:#0e1324;
-      --card:#111a33;
-      --card-2:#0f1730;
-      --text:#eef3ff;
-      --muted:#bfc9e6;
-      --accent:#ff7a00;
-      --accent-2:#19a84a;
-      --chip:#1b2547;
-      --danger:#ff6b6b;
-      --ok:#4be07a;
-      --warning:#ffbf4d;
-      --border:#27325a;
-      --shadow:0 8px 24px rgba(0,0,0,.35);
-    }
-
-    /* Peacock theme */
-    [data-theme="peacock"]{
-      --bg:#0e1030;
-      --card:#141943;
-      --card-2:#10163a;
-      --text:#eef3ff;
-      --muted:#b9c4e8;
-      --accent:#1bd4b4;
-      --accent-2:#7aa6ff;
-      --chip:#1a2250;
-      --danger:#ff6b7d;
-      --ok:#4be07a;
-      --warning:#ffc56e;
-      --border:#273063;
-      --shadow:0 8px 24px rgba(0,0,0,.35);
-    }
-
-    *{box-sizing:border-box}
-    html,body{
-      margin:0;height:100%;
-      background:var(--bg);
-      color:var(--text);
-      font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif
-    }
-    a{color:var(--accent);text-decoration:none}
-    header{
-      position:sticky;top:0;z-index:10;
-      backdrop-filter:saturate(1.4) blur(10px);
-      background:color-mix(in srgb, var(--bg) 85%, transparent);
-      border-bottom:1px solid var(--border);
-    }
-    .wrap{max-width:1100px;margin:0 auto;padding:18px 20px}
-    .title{display:flex;align-items:center;gap:14px}
-    .logo{
-      width:38px;height:38px;border-radius:10px;
-      background: radial-gradient(120% 120% at 20% 20%, #3858d6 0%, #1b2a57 40%, #121a35 100%);
-      box-shadow:inset 0 0 22px rgba(0,0,0,.06), var(--shadow);
-      display:grid;place-items:center;color:#dff; font-weight:800;letter-spacing:.5px
-    }
-    .title h1{font-size:18px;margin:0}
-    .subtitle{font-size:13px;color:var(--muted);margin:2px 0 0}
-    .bar{display:grid;grid-template-columns:1fr auto;gap:10px;margin-top:14px}
-    .search{
-      display:flex;gap:10px;align-items:center;background:var(--card);border:1px solid var(--border);
-      border-radius:12px;padding:10px 12px;box-shadow:var(--shadow)
-    }
-    .search input{
-      background:transparent;border:0;outline:0;color:var(--text);
-      width:100%;font-size:15px
-    }
-    .actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
-    button, .chip, .selectlike{
-      border:1px solid var(--border);background:var(--chip);color:var(--text);
-      border-radius:999px;padding:9px 12px;font-weight:600;cursor:pointer
-    }
-    .selectlike{display:flex;align-items:center;gap:8px;padding:8px 10px}
-    .selectlike select{
-      background:transparent;color:var(--text);border:0;outline:0;appearance:none
-    }
-    button.secondary{background:var(--card)}
-    .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
-    .chip.active{background:linear-gradient(180deg,#e8eefc,#d8e3fb);border-color:#c7d5fb;box-shadow:0 6px 18px rgba(49,81,165,.18)}
-    main .grid{
-      margin-top:20px;
-      display:grid;grid-template-columns:repeat(12,1fr);gap:14px
-    }
-    .card{
-      grid-column:span 12;background:var(--card);
-      border:1px solid var(--border);border-radius:var(--radius);padding:14px 14px 12px;box-shadow:var(--shadow)
-    }
-    @media(min-width:720px){ .card{grid-column:span 6} }
-    @media(min-width:1024px){ .card{grid-column:span 4} }
-    .tag{font-size:11px;color:#41507a;background:#ecf2ff;border:1px solid #cfe0ff;padding:4px 8px;border-radius:999px;margin-right:8px}
-    .name{margin:8px 0 4px;font-size:16px}
-    .meta{font-size:13px;color:var(--muted)}
-    .card .btns{display:flex;gap:8px;margin-top:10px}
-    .pill{font-size:12px;background:#effaf4;border:1px solid #bfe8cf;color:#146b3a;padding:6px 10px;border-radius:999px}
-    .view{background:var(--accent);color:#ffffff;border:0}
-    .hidden{display:none}
-
-    /* Modal */
-    dialog{
-      width:min(860px,92vw);border:1px solid var(--border);
-      border-radius:16px;background:var(--card-2);
-      color:var(--text);box-shadow:0 30px 70px rgba(0,0,0,.18)
-    }
-    dialog::backdrop{background:rgba(3,5,12,.25);backdrop-filter:blur(3px)}
-    .modal-head{display:flex;justify-content:space-between;align-items:center;padding:16px;border-bottom:1px solid var(--border)}
-    .modal-head h3{margin:0;font-size:18px}
-    .modal-body{padding:16px}
-    .kvs{display:grid;grid-template-columns:1fr;gap:12px}
-    @media(min-width:720px){.kvs{grid-template-columns:1fr 1fr}}
-    .kv{background:var(--card-2);border:1px solid var(--border);border-radius:12px;padding:12px}
-    .kv h4{margin:0 0 8px;font-size:14px;color:#2a3870}
-    .kv p, .kv li{font-size:14px;color:#24325a;line-height:1.5}
-    .badge{display:inline-block;background:#eef4ff;border:1px solid #cfe0ff;color:#21305e;padding:6px 10px;border-radius:999px;font-size:12px}
-    .modal-foot{display:flex;justify-content:space-between;align-items:center;padding:14px;border-top:1px solid var(--border)}
-    .muted{color:var(--muted);font-size:12px}
-    .sr-only{position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden}
-
-    /* Print */
-    @media print{
-      header, .chips, .actions, .btns, dialog{display:none !important}
-      .card{break-inside:avoid}
-      body{background:#fff;color:#000}
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <div class="wrap">
-      <div class="title" role="banner">
-        <div class="logo" aria-hidden="true">MS</div>
-        <div>
-          <h1>Maharashtra & India Schemes (2025)</h1>
-          <p class="subtitle">Search, filter, and view details compiled from the provided document.</p>
-        </div>
-      </div>
-      <div class="bar">
-        <label class="search" aria-label="Search schemes">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15.5 15.5L21 21" stroke="#54628e" stroke-width="2" stroke-linecap="round"/><circle cx="11" cy="11" r="7" stroke="#54628e" stroke-width="2"/></svg>
-          <input id="q" type="search" placeholder="Search by name, eligibility, benefits, documents…" autocomplete="off" />
-        </label>
-        <div class="actions">
-          <button class="secondary" id="clearBtn" aria-label="Clear search">Clear</button>
-          <button onclick="window.print()" aria-label="Print this page">Print</button>
-
-          <!-- Theme selector -->
-          <label class="selectlike" aria-label="Select theme">
-            <span style="font-size:12px;color:var(--muted)">Theme</span>
-            <select id="themeSelect">
-              <option value="white">White</option>
-              <option value="light">Light</option>
-              <option value="dark">Dark</option>
-              <option value="contrast">High‑Contrast</option>
-              <option value="maha">Maharashtra</option>
-              <option value="peacock">Peacock</option>
-            </select>
-          </label>
-        </div>
-      </div>
-      <div class="chips" role="tablist" aria-label="Filter by category">
-        <span class="chip active" data-cat="All" role="tab" aria-selected="true" tabindex="0">All</span>
-        <span class="chip" data-cat="Agriculture" role="tab" tabindex="0">Agriculture</span>
-        <span class="chip" data-cat="Education" role="tab" tabindex="0">Education</span>
-        <span class="chip" data-cat="Social Welfare" role="tab" tabindex="0">Social Welfare</span>
-        <span class="chip" data-cat="Energy & Environment" role="tab" tabindex="0">Energy & Environment</span>
-        <span class="chip" data-cat="Health & Nutrition" role="tab" tabindex="0">Health & Nutrition</span>
-        <span class="chip" data-cat="Housing" role="tab" tabindex="0">Housing</span>
-        <span class="chip" data-cat="Employment & Skill" role="tab" tabindex="0">Employment & Skill</span>
-        <span class="chip" data-cat="Women Welfare" role="tab" tabindex="0">Women Welfare</span>
-      </div>
-    </div>
-  </header>
-
-  <main class="wrap">
-    <section id="count" aria-live="polite" class="meta"></section>
-    <section class="grid" id="cards" aria-label="Scheme results"></section>
-  </main>
-
-  <dialog id="modal" aria-modal="true">
-    <div class="modal-head">
-      <h3 id="mTitle">Scheme</h3>
-      <button id="mClose" aria-label="Close details">Close</button>
-    </div>
-    <div class="modal-body">
-      <div class="kvs">
-        <div class="kv">
-          <h4>Category</h4>
-          <p id="mCat"></p>
-        </div>
-        <div class="kv">
-          <h4>Portal</h4>
-          <span class="badge" id="mPortal">—</span>
-        </div>
-        <div class="kv" style="grid-column:1/-1">
-          <h4>Eligibility</h4>
-          <ul id="mElig"></ul>
-        </div>
-        <div class="kv" style="grid-column:1/-1">
-          <h4>Benefits</h4>
-          <ul id="mBen"></ul>
-        </div>
-        <div class="kv" style="grid-column:1/-1">
-          <h4>Documents</h4>
-          <ul id="mDoc"></ul>
-        </div>
-      </div>
-    </div>
-    <div class="modal-foot">
-      <span class="muted">External links are intentionally omitted; portal names are provided for reference.</span>
-      <button id="mClose2">Done</button>
-    </div>
-  </dialog>
-
-  <script>
-  // THEME: init, persist, switch
-  const themeSelect = document.getElementById('themeSelect');
-  const APPLY_THEME = (val)=>{
-    const theme = ['white','light','dark','contrast','maha','peacock'].includes(val) ? val : 'white';
-    document.documentElement.setAttribute('data-theme', theme);
-    try{ localStorage.setItem('schemeTheme', theme); }catch(e){}
-    if(themeSelect) themeSelect.value = theme;
-  };
-  // On load (respect saved; else prefer system; else white)
-  let savedTheme = null;
-  try{ savedTheme = localStorage.getItem('schemeTheme'); }catch(e){}
-  const sys = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'white';
-  APPLY_THEME(savedTheme || sys);
-  // On change
-  themeSelect?.addEventListener('change', e=>APPLY_THEME(e.target.value));
-
-  // Data derived from the provided document; external URLs intentionally omitted (portal labels only).
-  const schemes = [
-    // A. Agriculture and Farmer Welfare
-    {id:"A1", name:"Krishi Samruddhi Yojana", category:"Agriculture", tag:"Maharashtra", portal:"MahaSDB Portal", 
-      eligibility:["Small & marginal farmers; SC/ST; women farmers; PwDs; FPOs"],
-      benefits:["Support for micro‑irrigation, climate‑resilient farming, mechanization, crop diversification"],
-      documents:["AgrisTAC ID","Aadhaar","Income certificate","Land records","Bank passbook"]},
-    {id:"A2", name:"Nanaji Deshmukh Krishi Sanjivani Yojana", category:"Agriculture", tag:"Maharashtra", portal:"Agriculture Dept. Portal",
-      eligibility:["Farmers in drought‑prone areas"],
-      benefits:["Soil improvement and drought resilience support"],
-      documents:["Aadhaar","Land documents","Domicile proof"]},
-    {id:"A3", name:"Dr. Babasaheb Ambedkar Krishi Swavalamban Yojana", category:"Agriculture", tag:"Maharashtra", portal:"NABARD",
-      eligibility:["SC/Neo‑Buddhist farmers with wells/ponds"],
-      benefits:["Subsidy for wells, ponds, irrigation pumps, micro‑irrigation (up to 90%)"],
-      documents:["Caste certificate","Land/water asset proof","Aadhaar"]},
-    {id:"A4", name:"Magel Tyala Shet Tale Yojana (Farm Pond)", category:"Agriculture", tag:"Maharashtra", portal:"Agriculture Dept. Portal",
-      eligibility:["Small/marginal farmers with 0.6+ ha land"],
-      benefits:["₹50,000 subsidy for farm pond construction"],
-      documents:["Land record","Aadhaar","Income certificate"]},
-    {id:"A5", name:"Mukhyamantri Saur Krushi Pump Yojana", category:"Agriculture", tag:"Maharashtra", portal:"MyScheme",
-      eligibility:["All registered farmers in Maharashtra"],
-      benefits:["Subsidized solar pumps for irrigation"],
-      documents:["Aadhaar","Land documents","Bank passbook"]},
-    {id:"A6", name:"Pradhan Mantri Kisan Samman Nidhi (PM‑Kisan)", category:"Agriculture", tag:"India", portal:"PM‑Kisan",
-      eligibility:["All landholding farmers"],
-      benefits:["₹6,000/year in 3 DBT installments"],
-      documents:["Aadhaar","Land proof","Bank passbook"]},
-    {id:"A7", name:"Namo Shetkari Maha Samman Nidhi", category:"Agriculture", tag:"Maharashtra", portal:"Maha Agri",
-      eligibility:["All PM‑Kisan beneficiaries"],
-      benefits:["Additional state DBT top‑up"],
-      documents:["Aadhaar","PM‑Kisan ID","Voter ID"]},
-    {id:"A8", name:"PM Fasal Bima Yojana (PMFBY)", category:"Agriculture", tag:"India", portal:"PMFBY",
-      eligibility:["All crop growers (voluntary/loanee)"],
-      benefits:["Crop insurance for natural calamities"],
-      documents:["Aadhaar","Land/crop proof"]},
-    {id:"A9", name:"Gramin Bhandaran Yojana (Rural Godown)", category:"Agriculture", tag:"India", portal:"NABARD",
-      eligibility:["Builders or farmers constructing warehouses"],
-      benefits:["Capital subsidy for rural storage"],
-      documents:["Project report","Aadhaar","Land approval"]},
-    {id:"A10", name:"Gat Sheti Yojana (Group Farming)", category:"Agriculture", tag:"Maharashtra", portal:"Agriculture Dept. Portal",
-      eligibility:["Groups of 10+ farmers with 100+ acres combined"],
-      benefits:["Up to ₹1 crore per group; technology and advisory support"],
-      documents:["Group registration","Aadhaar","Joint land documents"]},
-
-    // B. Education
-    {id:"B1", name:"Post Matric Scholarship (SC/ST/OBC/SBC/VJNT)", category:"Education", tag:"Maharashtra", portal:"MahaDBT",
-      eligibility:["Students from SC/ST/OBC/SBC/VJNT pursuing post‑matric courses"],
-      benefits:["Tuition fees, exam fees, maintenance allowance"],
-      documents:["Caste certificate","Income certificate","Mark sheet","Aadhaar","Bank passbook"]},
-    {id:"B2", name:"Rajarshi Shahu Maharaj Scholarship", category:"Education", tag:"Maharashtra", portal:"MahaDBT",
-      eligibility:["SC students with ≥75% in 10th"],
-      benefits:["100% tuition and exam fee waiver"],
-      documents:["10th marksheet","Caste certificate","Income certificate","Aadhaar"]},
-    {id:"B3", name:"Eklavya Scholarship", category:"Education", tag:"Maharashtra", portal:"MahaDBT",
-      eligibility:["Arts/Commerce graduates ≥60%; Science graduates ≥70%"],
-      benefits:["₹5,000 annually"],
-      documents:["Degree marksheet","Income certificate","Aadhaar","Bank passbook"]},
-    {id:"B4", name:"Merit Scholarship for EBC Students", category:"Education", tag:"Maharashtra", portal:"MahaDBT",
-      eligibility:["Economically Backward Class students with high academic merit"],
-      benefits:["Cash incentive based on merit"],
-      documents:["Income certificate","Previous year marksheet","Aadhaar","Bank details"]},
-    {id:"B5", name:"State Government Open Merit Scholarship", category:"Education", tag:"Maharashtra", portal:"MahaDBT",
-      eligibility:["SSC >60% and pursuing higher secondary"],
-      benefits:["₹100 per month for two years"],
-      documents:["SSC marksheet","Aadhaar","Income certificate","School certificate"]},
-
-    // C. Social Welfare
-    {id:"C1", name:"Sanjay Gandhi Niradhar Anudan Yojana", category:"Social Welfare", tag:"Maharashtra", portal:"SJSA",
-      eligibility:["SC/ST, OBCs, Differently Abled, Destitute; Age 18–65; BPL; no income source"],
-      benefits:["₹600/month (individual); ₹900/month (2+ beneficiaries)"],
-      documents:["Aadhaar","BPL Card","Income & Disability Certificate (if applicable)","Age proof","Bank passbook"]},
-    {id:"C2", name:"Shravan Bal Seva Pension", category:"Social Welfare", tag:"Maharashtra", portal:"SJSA",
-      eligibility:["Senior citizens 65+; Maharashtra resident; BPL; not receiving central pension"],
-      benefits:["₹600/month pension"],
-      documents:["Aadhaar","BPL Ration Card","Age & Domicile Proof","Bank passbook"]},
-    {id:"C3", name:"Indira Gandhi National Widow Pension", category:"Social Welfare", tag:"India", portal:"NSAP",
-      eligibility:["Widows aged 40–59 from BPL households"],
-      benefits:["₹300–₹500 per month (state‑wise variation)"],
-      documents:["Aadhaar","Death certificate","Income certificate","BPL proof","Bank passbook"]},
-    {id:"C4", name:"Indira Gandhi Disability Pension", category:"Social Welfare", tag:"India", portal:"NSAP",
-      eligibility:["Persons 18–59 with ≥80% disability from BPL households"],
-      benefits:["₹300–₹500 per month (state‑wise variation)"],
-      documents:["Aadhaar","Disability certificate","Income certificate","BPL proof","Bank passbook"]},
-    {id:"C5", name:"Mahatma Phule Jan Arogya Yojana", category:"Social Welfare", tag:"Maharashtra", portal:"MJPJAY",
-      eligibility:["Residents with Yellow/Orange ration card; SC/ST; economically weaker"],
-      benefits:["Free treatment up to ₹1.5 lakh/year in empaneled hospitals"],
-      documents:["Aadhaar","Ration card","Hospital referral/diagnosis","Caste certificate (if SC/ST)"]},
-
-    // D. Energy & Environment
-    {id:"D1", name:"Solar Pump Subsidy (PM‑KUSUM)", category:"Energy & Environment", tag:"India", portal:"MNRE",
-      eligibility:["Farmers (small, marginal, individual or groups) with land & water source or land for leasing"],
-      benefits:["60% subsidy, 30% loan, 10% contribution for solar pump"],
-      documents:["Aadhaar","Land ownership proof","Bank passbook","Passport photo"]},
-    {id:"D2", name:"UJALA – Affordable LEDs", category:"Energy & Environment", tag:"India", portal:"EESL",
-      eligibility:["All households/public institutions with valid electricity connection"],
-      benefits:["LED bulbs and appliances at subsidized prices"],
-      documents:["Aadhaar","Address proof","Electricity bill"]},
-    {id:"D3", name:"Pradhan Mantri Ujjwala Yojana (PMUY)", category:"Energy & Environment", tag:"India", portal:"PMUY",
-      eligibility:["Women from BPL families without an existing LPG connection"],
-      benefits:["Free LPG connection, first refill, and stove"],
-      documents:["Aadhaar","BPL card","Ration card","Age & ID proof"]},
-    {id:"D4", name:"Jal Shakti Abhiyan / Water Schemes", category:"Energy & Environment", tag:"India", portal:"WR/Jal Shakti",
-      eligibility:["Rural communities in water‑stressed or drought‑prone regions"],
-      benefits:["Groundwater recharge, rainwater harvesting, water body restoration, watershed development"],
-      documents:["Aadhaar","Project proposal via NGO/Gram Panchayat","Local authority approval"]},
-
-    // E. Health & Nutrition
-    {id:"E1", name:"Mahatma Jyotiba Phule Jan Arogya Yojana (MJPJAY)", category:"Health & Nutrition", tag:"Maharashtra", portal:"MJPJAY",
-      eligibility:["BPL families, SC/ST, farmers, senior citizens; Yellow/Orange ration card holders in Maharashtra"],
-      benefits:["Free treatment up to ₹1.5–₹2 lakh/year at empaneled hospitals"],
-      documents:["Aadhaar","Ration card","Hospital referral","Income certificate"]},
-    {id:"E2", name:"Ayushman Bharat (PM‑JAY)", category:"Health & Nutrition", tag:"India", portal:"PM‑JAY",
-      eligibility:["BPL families across India as per SECC"],
-      benefits:["Health cover of ₹5 lakh/year/family for secondary & tertiary care"],
-      documents:["Aadhaar","Ration card","PM‑JAY card (if available)","SECC ID"]},
-    {id:"E3", name:"Bal Sanjeevani (Child Nutrition)", category:"Health & Nutrition", tag:"Maharashtra/India", portal:"ICDS/State",
-      eligibility:["Malnourished children under 6 years diagnosed via Anganwadi/PHC programs"],
-      benefits:["Free nutrition kits, regular checkups, supplements, hospital referrals"],
-      documents:["Child Health Card","Anganwadi/PHC certificate","Aadhaar (if available)"]},
-    {id:"E4", name:"Janani Suraksha Yojana (JSY)", category:"Health & Nutrition", tag:"India", portal:"NHM",
-      eligibility:["Pregnant women, especially rural SC/ST and BPL"],
-      benefits:["₹700–₹1,400 for institutional delivery and transport"],
-      documents:["Aadhaar","Delivery record","BPL card","Mother & Child Health card"]},
-    {id:"E5", name:"TB Control, HIV/AIDS & Disability Care", category:"Health & Nutrition", tag:"India", portal:"NHM",
-      eligibility:["TB patients, HIV+ individuals, and PwDs; BPL or medically eligible"],
-      benefits:["Free diagnosis, treatment, ARVs, counseling, disability aids, nutritional support"],
-      documents:["Aadhaar","Medical certificate","Income proof (for BPL)","Disability ID (if applicable)"]},
-
-    // F. Housing
-    {id:"F1", name:"Pradhan Mantri Awas Yojana – Urban (PMAY‑U)", category:"Housing", tag:"India", portal:"PMAY‑U",
-      eligibility:["Urban poor (EWS/LIG/MIG‑I/II), slum dwellers; no pucca house; first‑time home buyer; income within limits"],
-      benefits:["Interest subsidy on home loans up to ₹2.67 lakh; financial aid for construction"],
-      documents:["Aadhaar","Income proof","Property papers","Bank details","Self‑declaration of not owning house"]},
-    {id:"F2", name:"Pradhan Mantri Awas Yojana – Gramin (PMAY‑G)", category:"Housing", tag:"India", portal:"PMAY‑G",
-      eligibility:["Rural poor; no pucca house; name in SECC 2011; priority for SC/ST, women‑headed households, etc."],
-      benefits:["₹1.2–₹1.3 lakh grant for house construction with basic amenities"],
-      documents:["Aadhaar","SECC proof","Bank account","Job card (MGNREGA)","Caste certificate (if SC/ST)"]},
-    {id:"F3", name:"MHADA Lottery Scheme", category:"Housing", tag:"Maharashtra", portal:"MHADA",
-      eligibility:["Maharashtra residents 18+ in EWS/LIG/MIG/HIG income groups"],
-      benefits:["Affordable housing via lottery in cities like Mumbai and Pune"],
-      documents:["Aadhaar","PAN card","Income certificate","Domicile proof","Bank details"]},
-    {id:"F4", name:"Slum Rehabilitation Scheme (SRA)", category:"Housing", tag:"Maharashtra", portal:"SRA",
-      eligibility:["Slum dwellers in notified slums before cut‑off date (e.g., 2000 or as defined)"],
-      benefits:["Free pucca housing unit in the same locality with better facilities"],
-      documents:["Aadhaar","Slum proof","Biometric survey details","Domicile certificate"]},
-    {id:"F5", name:"Affordable Rental Housing Complexes (ARHC)", category:"Housing", tag:"India", portal:"PMAY‑U",
-      eligibility:["Urban migrants, poor workers, students, laborers"],
-      benefits:["Safe, affordable rental housing near employment zones"],
-      documents:["Aadhaar","Employment proof (if available)","Rental agreement"]},
-
-    // G. Employment & Skill
-    {id:"G1", name:"Pradhan Mantri Kaushal Vikas Yojana (PMKVY 4.0)", category:"Employment & Skill", tag:"India", portal:"PMKVY",
-      eligibility:["Youth across India"],
-      benefits:["Free skill training and monetary rewards; RPL recognition"],
-      documents:["ID proof","Educational certificate","Photographs"]},
-    {id:"G2", name:"Deen Dayal Upadhyaya Grameen Kaushalya Yojana (DDU‑GKY)", category:"Employment & Skill", tag:"India", portal:"DDU‑GKY",
-      eligibility:["Rural youth 15–35 from poor households"],
-      benefits:["Skill training with job placement support under NRLM; digital vouchers"],
-      documents:["ID","Income & residence proof","Bank details"]},
-    {id:"G3", name:"DAY‑NULM (Urban) & DDU‑GKY (Rural)", category:"Employment & Skill", tag:"India", portal:"DAY‑NULM / DDU‑GKY",
-      eligibility:["Urban and rural poor individuals"],
-      benefits:["Skill training, self‑employment support, micro‑finance, SHG promotion"],
-      documents:["Income proof","Residence proof","ID","Bank details"]},
-    {id:"G4", name:"Prime Minister’s Employment Generation Programme (PMEGP)", category:"Employment & Skill", tag:"India", portal:"KVIC/PMEGP",
-      eligibility:["Traditional artisans, unemployed youth, rural and urban individuals"],
-      benefits:["Margin subsidy on business loans—up to 25% rural / 15% urban; higher for SC/ST/OBC/minorities/women"],
-      documents:["Project report","ID","Residence proof","Bank documents"]},
-    {id:"G5", name:"Stand‑Up India", category:"Employment & Skill", tag:"India", portal:"Stand‑Up India",
-      eligibility:["SC/ST and women entrepreneurs for greenfield enterprises"],
-      benefits:["Bank loans between ₹10 lakh and ₹1 crore"],
-      documents:["Business plan","ID/KYC","Caste certificate","Income certificate"]},
-    {id:"G6", name:"Assistance to Skill Development of OBCs/DNTs/EBCs", category:"Employment & Skill", tag:"India", portal:"Govt. Scheme",
-      eligibility:["OBCs, Denotified Tribes, Economically Backward Classes"],
-      benefits:["Skill development for income‑generating activities via partnerships"],
-      documents:["Community certificate","ID proof","Income proof"]},
-    {id:"G7", name:"Learn and Earn – Skill Development for Minorities", category:"Employment & Skill", tag:"India", portal:"Govt. Scheme",
-      eligibility:["Members of minority communities"],
-      benefits:["Training in traditional trades with placement support"],
-      documents:["Minority certificate","ID","Educational/training details"]},
-    {id:"G8", name:"Nai Manzil", category:"Employment & Skill", tag:"India", portal:"Govt. Scheme",
-      eligibility:["Minority youth without formal school certificates"],
-      benefits:["Integrated formal education and vocational training"],
-      documents:["Identity proof","Minority certificate"]},
-    {id:"G9", name:"USTTAD – Training in Traditional Arts/Crafts", category:"Employment & Skill", tag:"India", portal:"MyScheme",
-      eligibility:["Minority artisans and craftsmen"],
-      benefits:["Training to enhance livelihood opportunities"],
-      documents:["Artisan proof","ID","Community proof"]},
-    {id:"G10", name:"Employment‑Linked Incentive (ELI) Scheme", category:"Employment & Skill", tag:"India", portal:"—",
-      eligibility:["Employers and first‑time job seekers"],
-      benefits:["₹15,000 subsidy for job‑seekers; ₹3,000/month per new employee for six months (employers)"],
-      documents:["Job/offer letters","Employee details"]},
-
-    // H. Women Welfare
-    {id:"H1", name:"Pradhan Mantri Matru Vandana Yojana (PMMVY)", category:"Women Welfare", tag:"India", portal:"PMMVY",
-      eligibility:["Pregnant & lactating women 19+ for first live birth"],
-      benefits:["₹6,000 conditional cash transfer in installments"],
-      documents:["Identity proof","Pregnancy registration","Bank details"]},
-    {id:"H2", name:"Beti Bachao Beti Padhao (BBBP)", category:"Women Welfare", tag:"India", portal:"BBBP",
-      eligibility:["All citizens; focus on girl child survival, education, empowerment"],
-      benefits:["Awareness campaigns and institutional support"],
-      documents:["Not applicable (programmatic)"]},
-    {id:"H3", name:"Mahila Shakti Kendra (MSK)", category:"Women Welfare", tag:"India", portal:"MWCD",
-      eligibility:["Rural women"],
-      benefits:["Training, counseling, information, and service linkages"],
-      documents:["Identity and address proof"]},
-    {id:"H4", name:"Indira Gandhi National Widow Pension", category:"Women Welfare", tag:"India", portal:"NSAP",
-      eligibility:["Widows from BPL households aged 40–79"],
-      benefits:["₹300/month; ₹500 after age 80"],
-      documents:["Widowhood proof","BPL certificate","ID & address proof"]},
-    {id:"H5", name:"Swadhar Greh", category:"Women Welfare", tag:"India", portal:"MWCD – Swadhar",
-      eligibility:["Women in difficult circumstances (e.g., trafficking victims, destitute)"],
-      benefits:["Shelter, food, clothing, health & legal support, vocational training"],
-      documents:["ID proof","Referral from NGO/authority"]},
-    {id:"H6", name:"Stand‑Up India (Women)", category:"Women Welfare", tag:"India", portal:"Stand‑Up India",
-      eligibility:["Women (and SC/ST) entrepreneurs establishing non‑farm enterprises"],
-      benefits:["Bank loans ₹10 lakh–₹1 crore"],
-      documents:["Business plan","ID proof","Address proof","Registration documents"]},
-    {id:"H7", name:"Subhadra Yojana (Odisha)", category:"Women Welfare", tag:"Odisha", portal:"Odisha Govt.",
-      eligibility:["Women aged 21–60 from EWS; excludes govt employees and taxpayers"],
-      benefits:["₹50,000 over 5 years via Aadhaar‑linked bank account"],
-      documents:["ID proof","Aadhaar","Bank details","Income proof"]},
-    {id:"H8", name:"Kanyashree Prakalpa (West Bengal)", category:"Women Welfare", tag:"West Bengal", portal:"Kanyashree",
-      eligibility:["Unmarried girls 13–18; family income ≤ ₹1.2 lakh (relaxed for special categories)"],
-      benefits:["₹1,000 annual scholarship; ₹25,000 one‑time grant at 18"],
-      documents:["ID proof","Age certificate","School enrollment proof","Income certificate"]},
-    {id:"H9", name:"Kishori Shakti Yojana", category:"Women Welfare", tag:"India", portal:"MWCD",
-      eligibility:["Adolescent girls aged 11–18 under ICDS"],
-      benefits:["Education, vocational training, health awareness"],
-      documents:["Birth certificate","ID","School enrollment proof"]},
-    {id:"H10", name:"MKSP & Janani Suraksha Yojana (JSY)", category:"Women Welfare", tag:"India", portal:"MKSP / JSY",
-      eligibility:["Women farmers (MKSP); Pregnant women, especially BPL (JSY)"],
-      benefits:["Technical training, financial aid, livelihood support (MKSP); Cash assistance for institutional delivery (JSY)"],
-      documents:["ID","Land/farming proof (MKSP)","Healthcare records (JSY)"]}
-  ];
-
-  const cardsEl = document.getElementById('cards');
-  const countEl = document.getElementById('count');
-  const qEl = document.getElementById('q');
-  const clearBtn = document.getElementById('clearBtn');
-
-  const modal = document.getElementById('modal');
-  const mTitle = document.getElementById('mTitle');
-  const mCat = document.getElementById('mCat');
-  const mPortal = document.getElementById('mPortal');
-  const mElig = document.getElementById('mElig');
-  const mBen = document.getElementById('mBen');
-  const mDoc = document.getElementById('mDoc');
-  const mClose = document.getElementById('mClose');
-  const mClose2 = document.getElementById('mClose2');
-
-  let state = { q:'', cat:'All' };
-
-  function render(){
-    const filtered = schemes.filter(s=>{
-      const inCat = state.cat==='All' || s.category===state.cat;
-      const hay = (s.name+' '+s.category+' '+s.tag+' '+s.portal+' '+s.eligibility.join(' ')+' '+s.benefits.join(' ')+' '+s.documents.join(' ')).toLowerCase();
-      const inQ = !state.q || hay.includes(state.q.toLowerCase());
-      return inCat && inQ;
-    });
-    cardsEl.innerHTML = filtered.map(s=>cardHTML(s)).join('');
-    countEl.textContent = `${filtered.length} scheme${filtered.length===1?'':'s'} shown`;
-    filtered.forEach(s=>{
-      const btn = document.getElementById('v-'+s.id);
-      btn?.addEventListener('click',()=>openModal(s));
-    });
-  }
-
-  function esc(str){ return str.replace(/[&<>"']/g, m=>({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m])); }
-
-  function cardHTML(s){
-    return `
-      <article class="card" aria-label="${esc(s.name)}">
-        <div>
-          <span class="tag">${esc(s.category)}</span>
-          <span class="pill" title="Jurisdiction">${esc(s.tag)}</span>
-        </div>
-        <h3 class="name">${esc(s.name)}</h3>
-        <p class="meta">Portal: ${esc(s.portal || '—')}</p>
-        <div class="btns">
-          <button id="v-${s.id}" class="view">View details</button>
-        </div>
-      </article>
-    `;
-  }
-
-  function listify(el, arr){
-    el.innerHTML = arr.map(x=>`<li>${esc(x)}</li>`).join('');
-  }
-
-  function openModal(s){
-    mTitle.textContent = s.name;
-    mCat.textContent = `${s.category} • ${s.tag}`;
-    mPortal.textContent = s.portal || '—';
-    listify(mElig, s.eligibility||[]);
-    listify(mBen, s.benefits||[]);
-    listify(mDoc, s.documents||[]);
-    modal.showModal();
-  }
-
-  // Events
-  qEl.addEventListener('input', e=>{ state.q = e.target.value.trim(); render(); });
-  clearBtn.addEventListener('click', ()=>{ qEl.value=''; state.q=''; render(); });
-  document.querySelectorAll('.chip').forEach(ch=>{
-    ch.addEventListener('click', ()=>{
-      document.querySelectorAll('.chip').forEach(c=>c.classList.remove('active'));
-      ch.classList.add('active');
-      state.cat = ch.dataset.cat;
-      render();
-    });
-    ch.addEventListener('keydown', (e)=>{ if(e.key==='Enter' || e.key===' '){ ch.click(); } });
-  });
-  mClose.addEventListener('click', ()=>modal.close());
-  mClose2?.addEventListener('click', ()=>modal.close());
-  modal.addEventListener('click', (e)=>{ if(e.target===modal) modal.close(); });
-
-  // init
-  render();
-  </script>
-</body>
-</html>
+                <div class="scheme">
+                    <h3>Mahatma Jyotiba Phule Jan Arogya Yojana (MJPJAY)<span class="scheme-tag">EXPANDED 2025</span></h3>
+                    <div class="scheme-info">
+                        <strong>🎯 Eligibility:</strong>
+                        Economically vulnerable households in Maharashtra (SECC/state lists/Yellow/Orange ration card holders)
+                    </div>
+                    <div class="scheme-info">
+                        <strong>📄 Required Documents:</strong>
+                        Aadhaar, ration card, hospital referral, income certificate (
